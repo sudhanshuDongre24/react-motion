@@ -49,3 +49,10 @@ body {
   padding: 0.4rem 0.8rem;
   cursor: pointer;
 }
+
+.container {
+  width: 150px;
+  height: 150px;
+  background-image: url("https://framerusercontent.com/images/M4SNURkNYCDjIiopKdiL689jOQ.svg");
+  border-radius: 30px;
+}
