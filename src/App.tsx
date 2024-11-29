@@ -9,6 +9,7 @@ import ColorsKeyFrameAnimation from "./examples/ColorsKeyFrameAnimation.js";
 import ColorsSwitchingBetweenStates from "./examples/ColorsSwitchingBetweenStates.js";
 import CyclingParentAndChild from "./examples/CyclingParentAndChild.js";
 import CycleThroughStates from "./examples/CycleThroughStates.js";
+import Drag from "./examples/Drag.js";
 
 const App = () => {
   return (
@@ -24,7 +25,8 @@ const App = () => {
       {/* <ColorsKeyFrameAnimation /> */}
       {/* <ColorsSwitchingBetweenStates /> */}
       {/* <CyclingParentAndChild /> */}
-      <CycleThroughStates />
+      {/* <CycleThroughStates /> */}
+      <Drag />
     </div>
   );
 };

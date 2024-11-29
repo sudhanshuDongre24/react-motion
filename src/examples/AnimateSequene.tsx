@@ -11,14 +11,14 @@ const AnimateSequene = () => {
     }
   }, [isInView]);
 
-  function sequence() {
+  /* function sequence() {
     animate([
       [scope.current, { rotate: -90 }],
       [scope.current, { scale: 1.5 }],
       [scope.current, { rotate: 0 }],
       [scope.current, { scale: 1 }],
     ]);
-  }
+  } */
 
   return (
     /*  <div

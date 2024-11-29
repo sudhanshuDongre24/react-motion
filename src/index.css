@@ -50,9 +50,29 @@ body {
   cursor: pointer;
 }
 
-.container {
+/* .container {
   width: 150px;
   height: 150px;
   background-image: url("https://framerusercontent.com/images/M4SNURkNYCDjIiopKdiL689jOQ.svg");
   border-radius: 30px;
+}
+ */
+
+.container {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+  place-items: center;
+  background: rgb(255, 255, 255, 0.2);
+  border-radius: 30px;
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: inherit;
+  cursor: pointer;
 }
