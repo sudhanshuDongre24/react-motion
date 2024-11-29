@@ -13,13 +13,14 @@ import Drag from "./examples/Drag.js";
 import Drag3d from "./examples/drag3d.js";
 import DragConstraints from "./examples/DragConstraints.js";
 import DynamicNavbar from "./examples/DynamicNavbar.js";
+import AnimationControl from "./pages/AnimationControl.js";
 
 const App = () => {
   return (
     <div>
       {/* <BasicOfMotion /> */}
-      <Gesture />
-
+      {/* <Gesture /> */}
+      <AnimationControl />
       {/* Examples */}
       {/* <AnimatePresenceStack /> */}
       {/* <BoxAnimation /> */}
