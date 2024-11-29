@@ -11,6 +11,7 @@ import CyclingParentAndChild from "./examples/CyclingParentAndChild.js";
 import CycleThroughStates from "./examples/CycleThroughStates.js";
 import Drag from "./examples/Drag.js";
 import Drag3d from "./examples/drag3d.js";
+import DragConstraints from "./examples/DragConstraints.js";
 
 const App = () => {
   return (
@@ -28,7 +29,8 @@ const App = () => {
       {/* <CyclingParentAndChild /> */}
       {/* <CycleThroughStates /> */}
       {/* <Drag /> */}
-      <Drag3d />
+      {/* <Drag3d /> */}
+      <DragConstraints />
     </div>
   );
 };
