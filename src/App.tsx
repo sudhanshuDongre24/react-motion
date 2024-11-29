@@ -7,6 +7,7 @@ import AnimateSequene from "./examples/AnimateSequene.js";
 import ColorInterpolation from "./examples/ColorInterpolation.js";
 import ColorsKeyFrameAnimation from "./examples/ColorsKeyFrameAnimation.js";
 import ColorsSwitchingBetweenStates from "./examples/ColorsSwitchingBetweenStates.js";
+import CyclingParentAndChild from "./examples/CyclingParentAndChild.js";
 
 const App = () => {
   return (
@@ -20,7 +21,8 @@ const App = () => {
       {/* <ColorInterpolation />
        */}
       {/* <ColorsKeyFrameAnimation /> */}
-      <ColorsSwitchingBetweenStates />
+      {/* <ColorsSwitchingBetweenStates /> */}
+      <CyclingParentAndChild />
     </div>
   );
 };
