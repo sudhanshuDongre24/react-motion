@@ -12,12 +12,14 @@ import CycleThroughStates from "./examples/CycleThroughStates.js";
 import Drag from "./examples/Drag.js";
 import Drag3d from "./examples/drag3d.js";
 import DragConstraints from "./examples/DragConstraints.js";
+import DynamicNavbar from "./examples/DynamicNavbar.js";
 
 const App = () => {
   return (
     <div>
       {/* <BasicOfMotion /> */}
-      {/* <Gesture /> */}
+      <Gesture />
+
       {/* Examples */}
       {/* <AnimatePresenceStack /> */}
       {/* <BoxAnimation /> */}
@@ -30,7 +32,8 @@ const App = () => {
       {/* <CycleThroughStates /> */}
       {/* <Drag /> */}
       {/* <Drag3d /> */}
-      <DragConstraints />
+      {/* <DragConstraints /> */}
+      {/* <DynamicNavbar /> */}
     </div>
   );
 };

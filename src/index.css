@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   --from-left: 3;
   --from-top: 4;
   background-clip: border-box;
@@ -19,10 +19,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
 
 .refresh {
@@ -40,15 +40,7 @@ body {
   cursor: pointer;
 }
 
-.example-Button {
-  background: rgb(86, 1, 245);
-  color: white;
-  font-size: 1.8rem;
-  border-radius: 0.4rem;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-}
+ */
 
 /* .container {
   width: 150px;
@@ -57,7 +49,7 @@ body {
   border-radius: 30px;
 }
  */
-
+/* 
 .container {
   width: 300px;
   height: 300px;
@@ -67,12 +59,96 @@ body {
   place-items: center;
   background: rgb(255, 255, 255, 0.2);
   border-radius: 30px;
-}
-
+} */
+/* 
 .item {
   width: 150px;
   height: 150px;
   background-color: white;
   border-radius: inherit;
+  cursor: pointer;
+}
+ */
+
+* {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  --black: #111111;
+  --white: #fdfdfd;
+  --green: #22cc88;
+  --blue: #0455fd;
+  --purple: #8855ff;
+  --red: #ff0055;
+  --orange: #ee4444;
+  --yellow: #ffcc00;
+  --mustard: #ffaa00;
+  --grey: #808080;
+
+  --background: var(--black);
+  --accent: var(--white);
+
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--accent);
+  padding-bottom: 100px;
+}
+
+.App {
+  text-align: left;
+  height: 200vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10%; */
+}
+
+.navbar {
+  width: 100%;
+  background: var(--background);
+  border-bottom: 1px solid var(--accent);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  /* font-family: inter, sans-serif; */
+  font-size: 2rem;
+  margin-top: 14rem;
+  margin-left: 40px;
+}
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 5px;
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+  border-radius: 1ex;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
+.example-Button {
+  background: rgb(86, 1, 245);
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 0.4rem;
+  border: none;
+  padding: 0.4rem 0.8rem;
   cursor: pointer;
 }

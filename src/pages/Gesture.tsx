@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion, MotionConfig } from "motion/react";
 
 const Gesture = () => {
   return (
@@ -11,7 +11,31 @@ const Gesture = () => {
         gap: "0.8rem",
       }}
     >
-      <motion.button className="example-Button">Click Me</motion.button>
+      <MotionConfig
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+      >
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95, rotate: "2.5deg" }}
+          className="example-Button"
+        >
+          Click Me!
+        </motion.button>
+
+        <motion.button
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.85, rotate: "-2.5deg" }}
+          style={{
+            backgroundColor: "red",
+          }}
+          className="example-Button"
+        >
+          Click Me!
+        </motion.button>
+      </MotionConfig>
     </div>
   );
 };
