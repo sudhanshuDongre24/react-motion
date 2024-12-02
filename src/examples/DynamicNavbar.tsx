@@ -13,6 +13,7 @@ const DynamicNavbar = () => {
   const endY = startY + scrollDistance;
 
   const { scrollY } = useScroll();
+  console.log(scrollY);
   const scrollOutput = useTransform(
     scrollY,
     [startY, endY, endY],

@@ -16,10 +16,11 @@ import DynamicNavbar from "./examples/DynamicNavbar.js";
 import AnimationControl from "./pages/AnimationControl.js";
 import ViewBasedAnimation from "./pages/ViewBasedAnimation.js";
 import ScrollAnimation from "./pages/ScrollAnimation.js";
+import TransformBox from "./examples/TransformBox.js";
 
 const App = () => {
   return (
-    <div>
+    <>
       {/* <BasicOfMotion /> */}
       {/* <Gesture /> */}
       {/* <AnimationControl /> */}
@@ -39,8 +40,9 @@ const App = () => {
       {/* <Drag /> */}
       {/* <Drag3d /> */}
       {/* <DragConstraints /> */}
-      <DynamicNavbar />
-    </div>
+      {/* <DynamicNavbar /> */}
+      <TransformBox />
+    </>
   );
 };
 
