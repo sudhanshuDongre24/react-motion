@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 import BasicOfMotion from "./pages/BasicOfMotion.js";
 import Gesture from "./pages/Gesture.js";
 import AnimatePresenceStack from "./examples/AnimatePresenceStack.js";
@@ -17,10 +18,11 @@ import AnimationControl from "./pages/AnimationControl.js";
 import ViewBasedAnimation from "./pages/ViewBasedAnimation.js";
 import ScrollAnimation from "./pages/ScrollAnimation.js";
 import TransformBox from "./examples/TransformBox.js";
+import HorizontalScroll from "./examples/HorizontalScroll.js";
 
 const App = () => {
   return (
-    <>
+    <div>
       {/* <BasicOfMotion /> */}
       {/* <Gesture /> */}
       {/* <AnimationControl /> */}
@@ -41,8 +43,9 @@ const App = () => {
       {/* <Drag3d /> */}
       {/* <DragConstraints /> */}
       {/* <DynamicNavbar /> */}
-      <TransformBox />
-    </>
+      {/* <TransformBox /> */}
+      <HorizontalScroll />
+    </div>
   );
 };
 
