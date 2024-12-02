@@ -24,7 +24,7 @@ const App = () => {
       {/* <Gesture /> */}
       {/* <AnimationControl /> */}
       {/* <ViewBasedAnimation /> */}
-      <ScrollAnimation />
+      {/* <ScrollAnimation /> */}
 
       {/* Examples */}
       {/* <AnimatePresenceStack /> */}
@@ -39,7 +39,7 @@ const App = () => {
       {/* <Drag /> */}
       {/* <Drag3d /> */}
       {/* <DragConstraints /> */}
-      {/* <DynamicNavbar /> */}
+      <DynamicNavbar />
     </div>
   );
 };
