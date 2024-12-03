@@ -21,6 +21,8 @@ import TransformBox from "./examples/TransformBox.js";
 import HorizontalScroll from "./examples/HorizontalScroll.js";
 import ScrollConstraints from "./examples/ScrollConstraints.js";
 import LayoutAnimation from "./examples/LayoutAnimation.js";
+import LayoutAnimation2 from "./examples/LayoutAnimation2.js";
+import LayoutAnimations from "./examples/LayoutAnimations.js";
 
 const App = () => {
   return (
@@ -48,7 +50,8 @@ const App = () => {
       {/* <TransformBox /> */}
       {/* <HorizontalScroll /> */}
       {/* <ScrollConstraints /> */}
-      <LayoutAnimation />
+      {/* <LayoutAnimation /> */}
+      <LayoutAnimations />
     </div>
   );
 };
