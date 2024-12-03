@@ -20,6 +20,7 @@ import ScrollAnimation from "./pages/ScrollAnimation.js";
 import TransformBox from "./examples/TransformBox.js";
 import HorizontalScroll from "./examples/HorizontalScroll.js";
 import ScrollConstraints from "./examples/ScrollConstraints.js";
+import LayoutAnimation from "./examples/LayoutAnimation.js";
 
 const App = () => {
   return (
@@ -46,7 +47,8 @@ const App = () => {
       {/* <DynamicNavbar /> */}
       {/* <TransformBox /> */}
       {/* <HorizontalScroll /> */}
-      <ScrollConstraints />
+      {/* <ScrollConstraints /> */}
+      <LayoutAnimation />
     </div>
   );
 };
