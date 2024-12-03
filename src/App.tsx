@@ -25,6 +25,7 @@ import LayoutAnimation2 from "./examples/LayoutAnimation2.js";
 import LayoutAnimations from "./examples/LayoutAnimations.js";
 import ScaleCorrection from "./examples/ScaleCorrection.js";
 import ScrollableDrag from "./examples/ScrollableDrag.js";
+import UseVelocity from "./examples/UseVelocity.js";
 
 const App = () => {
   return (
@@ -55,7 +56,8 @@ const App = () => {
       {/* <LayoutAnimation /> */}
       {/* <LayoutAnimations /> */}
       {/* <ScaleCorrection /> */}
-      <ScrollableDrag />
+      {/* <ScrollableDrag /> */}
+      <UseVelocity />
     </div>
   );
 };
