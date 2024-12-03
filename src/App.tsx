@@ -23,6 +23,7 @@ import ScrollConstraints from "./examples/ScrollConstraints.js";
 import LayoutAnimation from "./examples/LayoutAnimation.js";
 import LayoutAnimation2 from "./examples/LayoutAnimation2.js";
 import LayoutAnimations from "./examples/LayoutAnimations.js";
+import ScaleCorrection from "./examples/ScaleCorrection.js";
 
 const App = () => {
   return (
@@ -51,7 +52,8 @@ const App = () => {
       {/* <HorizontalScroll /> */}
       {/* <ScrollConstraints /> */}
       {/* <LayoutAnimation /> */}
-      <LayoutAnimations />
+      {/* <LayoutAnimations /> */}
+      <ScaleCorrection />
     </div>
   );
 };

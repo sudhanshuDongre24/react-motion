@@ -668,3 +668,24 @@ body {
   align-items: center;
   cursor: pointer;
 }
+
+.parent {
+  background: white;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f107a3;
+}
+
+.parent[data-isOpen="true"] {
+  width: 400px;
+  height: 400px;
+}
