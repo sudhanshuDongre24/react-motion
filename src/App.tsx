@@ -26,6 +26,7 @@ import LayoutAnimations from "./examples/LayoutAnimations.js";
 import ScaleCorrection from "./examples/ScaleCorrection.js";
 import ScrollableDrag from "./examples/ScrollableDrag.js";
 import UseVelocity from "./examples/UseVelocity.js";
+import ShapesButton from "./examples/Shapes-Button/ShapesButton.js";
 
 const App = () => {
   return (
@@ -57,7 +58,8 @@ const App = () => {
       {/* <LayoutAnimations /> */}
       {/* <ScaleCorrection /> */}
       {/* <ScrollableDrag /> */}
-      <UseVelocity />
+      {/* <UseVelocity /> */}
+      <ShapesButton />
     </div>
   );
 };
