@@ -1,8 +1,10 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { motion, MotionConfig } from "motion/react";
 
+const TOOGLE = "toggle";
+
 const LayoutOrchestration = () => {
-  const [items, toggleItem] = useDummyItem();
+  const [items, toggleItem] = useDummmyItem();
 
   const compareActive = (a, b) => {
     const itemA = items[a];
@@ -37,24 +39,6 @@ const LayoutOrchestration = () => {
 
 export default LayoutOrchestration;
 
-function useDummyItem() {
-  const [state, dispatch] = useReducer(itemReducer, {
-    Item1: false,
-    Item2: false,
-    Item3: false,
-  });
-
-  return [state, (id) => () => dispatch({ action: TOGGLE, id })];
-}
-
-function itemReducer(state, { action, id }) {
-  if (action === TOGGLE) {
-    return { ...state, [id]: !state[id] };
-  }
-
-  return state;
-}
-
 function Switch({ isActive, onClick }) {
   return (
     <MotionConfig transition={{ duration: 0.3, ease: "easeOut" }}>
@@ -62,8 +46,8 @@ function Switch({ isActive, onClick }) {
         className="switch"
         initial={false}
         animate={{ backgroundColor: isActive ? "#f90566" : "#111" }}
+        style={{ justifyContent: isActive ? "flex-end " : "flex-start" }}
         onClick={onClick}
-        style={{ justifyContent: isActive ? "flex-end" : "flex-start" }}
       >
         <motion.div layout className="handle" />
       </motion.div>
@@ -71,4 +55,26 @@ function Switch({ isActive, onClick }) {
   );
 }
 
-const TOGGLE = "toogle";
+function itemReducer(state, { action, id }) {
+  if (action === TOOGLE) {
+    return { ...state, [id]: !state[id] };
+  }
+  return state;
+}
+
+function useDummmyItem() {
+  const [state, dispatch] = React.useReducer(itemReducer, {
+    Item1: false,
+    Item2: false,
+    Item3: false,
+  });
+
+  return [
+    state,
+    (id) => () =>
+      dispatch({
+        action: TOOGLE,
+        id,
+      }),
+  ];
+}
