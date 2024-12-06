@@ -29,6 +29,7 @@ import UseVelocity from "./examples/UseVelocity.js";
 import ShapesButton from "./examples/Shapes-Button/ShapesButton.js";
 import LayoutOrchestration from "./examples/LayoutOrchestration.js";
 import DragToReOrder from "./examples/DragToReOrder.js";
+import DynamicNavigation from "./examples/DynamicNavigation/DynamicNavigation.js";
 
 const App = () => {
   return (
@@ -63,7 +64,8 @@ const App = () => {
       {/* <UseVelocity /> */}
       {/* <ShapesButton /> */}
       {/* <LayoutOrchestration /> */}
-      <DragToReOrder />
+      {/* <DragToReOrder /> */}
+      <DynamicNavigation />
     </div>
   );
 };
