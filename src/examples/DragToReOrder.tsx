@@ -13,7 +13,13 @@ const DragToReOrder = () => {
   const [items, setItems] = useState(initialItems);
 
   return (
-    <Reorder.Group axis="y" values={items} onReorder={setItems}>
+    <Reorder.Group
+      axis="y"
+      values={items}
+      onReorder={setItems}
+      layoutScroll
+      style={{ height: 250, border: "1px solid black", overflowY: "auto" }}
+    >
       {items.map((item) => (
         <Item key={item} item={item} />
       ))}
