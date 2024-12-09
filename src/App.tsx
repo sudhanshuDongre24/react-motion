@@ -32,6 +32,7 @@ import DragToReOrderTab from "./examples/DragToReOrderTab/DynamicNavigation.js";
 import DynamicNav from "./examples/DynamicNav/DynamicNav.js";
 import PageTransition from "./examples/PageTransition/PageTransition.js";
 import ConicGradientPointer from "./examples/ConicGradientPointer.js";
+import FramerParallex from "./examples/FramerParallex/FramerParallex.js";
 
 const App = () => {
   return (
@@ -70,7 +71,8 @@ const App = () => {
       {/* <DragToReOrderTab /> */}
       {/* <DynamicNav /> */}
       {/* <PageTransition /> */}
-      <ConicGradientPointer />
+      {/* <ConicGradientPointer /> */}
+      <FramerParallex />
     </div>
   );
 };
