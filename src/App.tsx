@@ -30,6 +30,7 @@ import LayoutOrchestration from "./examples/LayoutOrchestration.js";
 import DragToReOrder from "./examples/DragToReOrder.js";
 import DragToReOrderTab from "./examples/DragToReOrderTab/DynamicNavigation.js";
 import DynamicNav from "./examples/DynamicNav/DynamicNav.js";
+import PageTransition from "./examples/PageTransition/PageTransition.js";
 
 const App = () => {
   return (
@@ -66,7 +67,8 @@ const App = () => {
       {/* <LayoutOrchestration /> */}
       {/* <DragToReOrder /> */}
       {/* <DragToReOrderTab /> */}
-      <DynamicNav />
+      {/* <DynamicNav /> */}
+      <PageTransition />
     </div>
   );
 };
