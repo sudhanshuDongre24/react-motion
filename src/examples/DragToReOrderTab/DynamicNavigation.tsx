@@ -9,7 +9,8 @@ import {
 
 import { removeItem, closestItem } from "./array-utils";
 import { Tab } from "./Tab";
-const DynamicNavigation = () => {
+
+const DragToReOrderTab = () => {
   const [tabs, setTabs] = useState(initialTabs);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
@@ -78,7 +79,7 @@ const DynamicNavigation = () => {
   );
 };
 
-export default DynamicNavigation;
+export default DragToReOrderTab;
 
 export function AddIcon() {
   return (

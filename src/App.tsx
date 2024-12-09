@@ -29,7 +29,7 @@ import UseVelocity from "./examples/UseVelocity.js";
 import ShapesButton from "./examples/Shapes-Button/ShapesButton.js";
 import LayoutOrchestration from "./examples/LayoutOrchestration.js";
 import DragToReOrder from "./examples/DragToReOrder.js";
-import DynamicNavigation from "./examples/DynamicNavigation/DynamicNavigation.js";
+import DragToReOrderTab from "./examples/DragToReOrderTab/DynamicNavigation.js";
 
 const App = () => {
   return (
@@ -65,7 +65,7 @@ const App = () => {
       {/* <ShapesButton /> */}
       {/* <LayoutOrchestration /> */}
       {/* <DragToReOrder /> */}
-      <DynamicNavigation />
+      <DragToReOrderTab />
     </div>
   );
 };
