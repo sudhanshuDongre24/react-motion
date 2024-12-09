@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 import BasicOfMotion from "./pages/BasicOfMotion.js";
 import Gesture from "./pages/Gesture.js";
 import AnimatePresenceStack from "./examples/AnimatePresenceStack.js";
@@ -30,6 +29,7 @@ import ShapesButton from "./examples/Shapes-Button/ShapesButton.js";
 import LayoutOrchestration from "./examples/LayoutOrchestration.js";
 import DragToReOrder from "./examples/DragToReOrder.js";
 import DragToReOrderTab from "./examples/DragToReOrderTab/DynamicNavigation.js";
+import DynamicNav from "./examples/DynamicNav/DynamicNav.js";
 
 const App = () => {
   return (
@@ -65,7 +65,8 @@ const App = () => {
       {/* <ShapesButton /> */}
       {/* <LayoutOrchestration /> */}
       {/* <DragToReOrder /> */}
-      <DragToReOrderTab />
+      {/* <DragToReOrderTab /> */}
+      <DynamicNav />
     </div>
   );
 };
