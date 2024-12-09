@@ -1,7 +1,6 @@
 import React from "react";
 import { Ingredient } from "./ingredients";
-import { Reorder } from "motion/react";
-import { motion } from "motion/react";
+import { motion, Reorder } from "motion/react";
 
 interface Props {
   item: Ingredient;
@@ -10,7 +9,7 @@ interface Props {
   onRemove: () => void;
 }
 
-const Tab = ({ item, onClick, onRemove, isSelected }: Props) => {
+export const Tab = ({ item, onClick, isSelected, onRemove }: Props) => {
   return (
     <Reorder.Item
       value={item}
@@ -18,9 +17,9 @@ const Tab = ({ item, onClick, onRemove, isSelected }: Props) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{
         opacity: 1,
-        backgroundColor: isSelected ? "#f3f3f3" : "#fff",
         y: 0,
-        transition: { duration: 0.15 },
+        transition: { duration: 0.5 },
+        backgroundColor: isSelected ? "#f3f3f3" : "#fff",
       }}
       exit={{ opacity: 0, y: 20, transition: { duration: 0.3 } }}
       whileDrag={{ backgroundColor: "#e3e3e3" }}
@@ -43,8 +42,6 @@ const Tab = ({ item, onClick, onRemove, isSelected }: Props) => {
     </Reorder.Item>
   );
 };
-
-export default Tab;
 
 export function CloseIcon() {
   return (

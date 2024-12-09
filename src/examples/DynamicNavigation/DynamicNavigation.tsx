@@ -8,7 +8,7 @@ import {
 } from "./ingredients";
 
 import { removeItem, closestItem } from "./array-utils";
-import Tab from "./Tab";
+import { Tab } from "./Tab";
 const DynamicNavigation = () => {
   const [tabs, setTabs] = useState(initialTabs);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
@@ -37,6 +37,7 @@ const DynamicNavigation = () => {
           values={tabs}
           onReorder={setTabs}
           as="ul"
+          axis="x"
           className="tabs"
         >
           <AnimatePresence initial={false}>
