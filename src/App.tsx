@@ -33,6 +33,7 @@ import DynamicNav from "./examples/DynamicNav/DynamicNav.js";
 import PageTransition from "./examples/PageTransition/PageTransition.js";
 import ConicGradientPointer from "./examples/ConicGradientPointer.js";
 import FramerParallex from "./examples/FramerParallex/FramerParallex.js";
+import Practice from "./examples/Practice/Practice.js";
 
 const App = () => {
   return (
@@ -72,7 +73,8 @@ const App = () => {
       {/* <DynamicNav /> */}
       {/* <PageTransition /> */}
       {/* <ConicGradientPointer /> */}
-      <FramerParallex />
+      {/* <FramerParallex /> */}
+      <Practice />
     </div>
   );
 };
