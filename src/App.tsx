@@ -34,6 +34,7 @@ import PageTransition from "./examples/PageTransition/PageTransition.js";
 import ConicGradientPointer from "./examples/ConicGradientPointer.js";
 import FramerParallex from "./examples/FramerParallex/FramerParallex.js";
 import Practice from "./examples/Practice/Practice.js";
+import HorizontalScrollCarousal from "./examples/HorizontalScrollCarousal/HorizontalScrollCarousal.js";
 
 const App = () => {
   return (
@@ -74,7 +75,8 @@ const App = () => {
       {/* <PageTransition /> */}
       {/* <ConicGradientPointer /> */}
       {/* <FramerParallex /> */}
-      <Practice />
+      <HorizontalScrollCarousal />
+      {/* <Practice /> */}
     </div>
   );
 };
