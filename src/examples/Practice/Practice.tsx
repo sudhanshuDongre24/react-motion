@@ -10,11 +10,17 @@ import {
 const Practice = () => {
   const [button, setButton] = React.useState<boolean>(false);
   const count = useMotionValue(0);
+  const x = useMotionValue(0);
   console.log(count);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const controls = animate(count, 100, { duration: 5 });
     return () => controls.stop();
+  }, []); */
+
+  useEffect(() => {
+    const timeout = setTimeout(() => x.set(100), 1000);
+    return () => clearTimeout(timeout);
   }, []);
 
   function handleButton() {
@@ -32,7 +38,7 @@ const Practice = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen gap-20">
+    <div className="flex justify-center items-center min-h-screen gap-20 bg-black">
       {/* <motion.section
         className="h-[200px] w-[200px] bg-red-500 "
         style={{ x: -500 }}
@@ -162,11 +168,35 @@ const Practice = () => {
         animate={{ x: 200 }}
         transition={{ type: "spring", damping: 10 }}
       /> */}
-      <motion.div
+      {/*   <motion.div
         className="w-20 h-20 bg-red-500 rounded "
         animate={{ x: 200 }}
         transition={{ type: "spring", mass: 10 }}
-      />
+      /> */}
+      {/* <motion.div className="w-20 h-20 bg-red-500 rounded " style={{ x }} />
+      <motion.div
+        className="w-20 h-20 bg-blue-500 rounded "
+        initial={["visible", "active"]}
+        style={{ x }}
+      /> */}
+
+      {/*  <button className="group relative px-4 py-2 font-medium text-slate-100 transition-colors duration-[400ms] hover:text-indigo-300">
+        <span>Hover</span>
+
+
+
+        <span className="absolute left-0 top-0 h-[2px] w-0 bg-indigo-300 transition-all duration-100 group-hover:w-full" />
+
+
+
+        <span className="absolute right-0 top-0 h-0 w-[2px] bg-indigo-300 transition-all delay-100 duration-100 group-hover:h-full" />
+
+      
+
+        <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-indigo-300 transition-all delay-200 duration-100 group-hover:w-full" />
+
+        <span className="absolute bottom-0 left-0 h-0 w-[2px] bg-indigo-300 transition-all delay-300 duration-100 group-hover:h-full" />
+      </button> */}
     </div>
   );
 };
