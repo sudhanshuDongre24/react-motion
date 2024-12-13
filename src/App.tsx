@@ -35,6 +35,7 @@ import ConicGradientPointer from "./examples/ConicGradientPointer.js";
 import FramerParallex from "./examples/FramerParallex/FramerParallex.js";
 import Practice from "./examples/Practice/Practice.js";
 import HorizontalScrollCarousal from "./examples/HorizontalScrollCarousal/HorizontalScrollCarousal.js";
+import DropdownMenu from "./examples/DropdownMenu.js";
 
 const App = () => {
   return (
@@ -75,8 +76,9 @@ const App = () => {
       {/* <PageTransition /> */}
       {/* <ConicGradientPointer /> */}
       {/* <FramerParallex /> */}
-      <HorizontalScrollCarousal />
+      {/* <HorizontalScrollCarousal /> */}
       {/* <Practice /> */}
+      <DropdownMenu />
     </div>
   );
 };
