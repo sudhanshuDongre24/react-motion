@@ -171,7 +171,7 @@ const Blog = () => {
         <a href="#">
           <img
             className="mb-2 h-14 w-full rounded object-cover"
-            src="/imgs/blog/4.png"
+            src="https://www.hover.dev/imgs/blog/5.png"
             alt="Placeholder image"
           />
 
@@ -186,7 +186,7 @@ const Blog = () => {
         <a href="#">
           <img
             className="mb-2 h-14 w-full rounded object-cover"
-            src="/imgs/blog/5.png"
+            src="https://www.hover.dev/imgs/blog/4.png"
             alt="Placeholder image"
           />
 
