@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { motion } from "motion/react";
-import { div } from "motion/react-client";
 
 type ToggleOptionType = "light" | "dark";
 

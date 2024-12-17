@@ -37,6 +37,7 @@ import Practice from "./examples/Practice/Practice.js";
 import HorizontalScrollCarousal from "./examples/HorizontalScrollCarousal/HorizontalScrollCarousal.js";
 import DropdownMenu from "./examples/DropdownMenu.js";
 import SliderToggle from "./examples/SliderToggle.js";
+import AnimatedHamburgerButton from "./examples/AnimatedHamburgerButton.js";
 
 const App = () => {
   return (
@@ -79,7 +80,8 @@ const App = () => {
       {/* <FramerParallex /> */}
       {/* <HorizontalScrollCarousal /> */}
       {/* <DropdownMenu /> */}
-      <SliderToggle />
+      {/* <SliderToggle /> */}
+      <AnimatedHamburgerButton />
       {/* <Practice /> */}
     </div>
   );
