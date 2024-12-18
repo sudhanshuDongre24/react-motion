@@ -38,6 +38,7 @@ import HorizontalScrollCarousal from "./examples/HorizontalScrollCarousal/Horizo
 import DropdownMenu from "./examples/DropdownMenu.js";
 import SliderToggle from "./examples/SliderToggle.js";
 import AnimatedHamburgerButton from "./examples/AnimatedHamburgerButton.js";
+import CustomKanban from "./examples/CustomKanban.js";
 
 const App = () => {
   return (
@@ -81,7 +82,8 @@ const App = () => {
       {/* <HorizontalScrollCarousal /> */}
       {/* <DropdownMenu /> */}
       {/* <SliderToggle /> */}
-      <AnimatedHamburgerButton />
+      {/* <AnimatedHamburgerButton /> */}
+      <CustomKanban />
       {/* <Practice /> */}
     </div>
   );
