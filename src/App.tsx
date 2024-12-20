@@ -39,6 +39,7 @@ import DropdownMenu from "./examples/DropdownMenu.js";
 import SliderToggle from "./examples/SliderToggle.js";
 import AnimatedHamburgerButton from "./examples/AnimatedHamburgerButton.js";
 import CustomKanban from "./examples/CustomKanban.js";
+import HoverImageLink from "./examples/HoverImageLink.js";
 
 const App = () => {
   return (
@@ -83,7 +84,8 @@ const App = () => {
       {/* <DropdownMenu /> */}
       {/* <SliderToggle /> */}
       {/* <AnimatedHamburgerButton /> */}
-      <CustomKanban />
+      {/* <CustomKanban /> */}
+      <HoverImageLink />
       {/* <Practice /> */}
     </div>
   );
