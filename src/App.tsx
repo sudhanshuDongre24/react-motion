@@ -40,6 +40,7 @@ import SliderToggle from "./examples/SliderToggle.js";
 import AnimatedHamburgerButton from "./examples/AnimatedHamburgerButton.js";
 import CustomKanban from "./examples/CustomKanban.js";
 import HoverImageLink from "./examples/HoverImageLink.js";
+import ShiftingCountDown from "./examples/ShiftingCountDown.js";
 
 const App = () => {
   return (
@@ -85,7 +86,8 @@ const App = () => {
       {/* <SliderToggle /> */}
       {/* <AnimatedHamburgerButton /> */}
       {/* <CustomKanban /> */}
-      <HoverImageLink />
+      {/* <HoverImageLink /> */}
+      <ShiftingCountDown />
       {/* <Practice /> */}
     </div>
   );
