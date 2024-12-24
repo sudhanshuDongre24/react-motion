@@ -41,6 +41,7 @@ import AnimatedHamburgerButton from "./examples/AnimatedHamburgerButton.js";
 import CustomKanban from "./examples/CustomKanban.js";
 import HoverImageLink from "./examples/HoverImageLink.js";
 import ShiftingCountDown from "./examples/ShiftingCountDown.js";
+import SwipeCard from "./examples/SwipeCard.js";
 
 const App = () => {
   return (
@@ -87,7 +88,8 @@ const App = () => {
       {/* <AnimatedHamburgerButton /> */}
       {/* <CustomKanban /> */}
       {/* <HoverImageLink /> */}
-      <ShiftingCountDown />
+      {/* <ShiftingCountDown /> */}
+      <SwipeCard />
       {/* <Practice /> */}
     </div>
   );
