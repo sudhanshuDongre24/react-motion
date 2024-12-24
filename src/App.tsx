@@ -42,6 +42,7 @@ import CustomKanban from "./examples/CustomKanban.js";
 import HoverImageLink from "./examples/HoverImageLink.js";
 import ShiftingCountDown from "./examples/ShiftingCountDown.js";
 import SwipeCard from "./examples/SwipeCard.js";
+import DragCards from "./examples/DragCards.js";
 
 const App = () => {
   return (
@@ -89,7 +90,8 @@ const App = () => {
       {/* <CustomKanban /> */}
       {/* <HoverImageLink /> */}
       {/* <ShiftingCountDown /> */}
-      <SwipeCard />
+      {/* <SwipeCard /> */}
+      <DragCards />
       {/* <Practice /> */}
     </div>
   );
