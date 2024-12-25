@@ -143,3 +143,15 @@ It override duration, The visual duration is a time, set in seconds, that the an
 - transformTemplate
 
 **Transition**
+
+## Animation Presenece
+
+Use for Exit Animation
+
+**Exit Animation**
+
+AnimatePresence works by detecting when its direct children are removed from the react tree
+
+- This can be due to mounting and remounting of compenent
+- It key Changing
+- Or When Children in a list are added/removed

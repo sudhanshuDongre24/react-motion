@@ -95,8 +95,8 @@ const App = () => {
       {/* <SwipeCard /> */}
       {/* <DragCards /> */}
       {/* <SlideInNotification /> */}
-      <DragCloseDrawer />
-      {/* <Practice /> */}
+      {/* <DragCloseDrawer /> */}
+      <Practice />
     </div>
   );
 };
