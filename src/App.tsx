@@ -43,6 +43,8 @@ import HoverImageLink from "./examples/HoverImageLink.js";
 import ShiftingCountDown from "./examples/ShiftingCountDown.js";
 import SwipeCard from "./examples/SwipeCard.js";
 import DragCards from "./examples/DragCards.js";
+import SlideInNotification from "./examples/SlideInNotification.js";
+import DragCloseDrawer from "./examples/DragCloseDrawer.js";
 
 const App = () => {
   return (
@@ -91,7 +93,9 @@ const App = () => {
       {/* <HoverImageLink /> */}
       {/* <ShiftingCountDown /> */}
       {/* <SwipeCard /> */}
-      <DragCards />
+      {/* <DragCards /> */}
+      {/* <SlideInNotification /> */}
+      <DragCloseDrawer />
       {/* <Practice /> */}
     </div>
   );

@@ -78,7 +78,7 @@ It override duration, The visual duration is a time, set in seconds, that the an
 - onAnimationStart
 - onAnimationComplete
 
-  **Hover**
+**Hover**
 
 - whileHover
 - onHoverStart
