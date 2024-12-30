@@ -10,13 +10,48 @@ import {
 } from "motion/react";
 
 const Practice = () => {
-  const [isPresent, safeToRemove] = usePresence();
+  const [items, setItems] = useState([1, 2, 3]);
 
-  console.log(id);
+  const addItem = () => {
+    setItems((prev) => [...prev, prev.length + 1]);
+  };
+
+  const removeItem = (id: number) => {
+    setItems((prev) => prev.filter((item) => item !== id));
+  };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="w-[100px] h-[100px]  bg-indigo-700" />
+    <div className="p-[20px] text-center">
+      <h1>Animate Presence</h1>
+
+      <button
+        onClick={addItem}
+        className="px-3 py-5 text-[16px] mb-5 border-2 rounded-lg my-10  bg-indigo-400 text-white"
+      >
+        Add Item
+      </button>
+
+      <div className="flex justify-center gap-2 flex-wrap">
+        <AnimatePresence
+          initial={false}
+          mode="popLayout"
+          onExitComplete={() => console.log("Exit animation completed!")}
+        >
+          {items.map((item) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="w-12 h-12 bg-purple-500 text-white flex items-center m-5  justify-center rounded-full cursor-default"
+              onClick={() => removeItem(item)}
+            >
+              {item}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
@@ -43,6 +78,16 @@ export default Practice;
   function handleButton() {
     setButton(!button);
   }
+
+  const [isPresent, safeToRemove] = usePresence();
+
+  console.log(id);
+
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="w-[100px] h-[100px]  bg-indigo-700" />
+    </div>
+  );
  const [isVisible, setIsVisible] = useState(true);
 
   return (

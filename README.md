@@ -155,3 +155,13 @@ AnimatePresence works by detecting when its direct children are removed from the
 - This can be due to mounting and remounting of compenent
 - It key Changing
 - Or When Children in a list are added/removed
+
+**Props**
+
+- initial: disable any initial animation on children the present, when the component first render
+- custom:
+- mode: Decides how animate Presence handle entering and exiting children
+  - sync: Children animate in/out as soon as they're added/removed
+  - wait: The entering child will wait until the exiting child has animated out.
+  - popLayout: Exiting children will popout of layout. This allow surrounding elements to move to their new layout
+- onExitComplete - Fires when all exiting nodes have completed animating out.
