@@ -45,6 +45,8 @@ import SwipeCard from "./examples/SwipeCard.js";
 import DragCards from "./examples/DragCards.js";
 import SlideInNotification from "./examples/SlideInNotification.js";
 import DragCloseDrawer from "./examples/DragCloseDrawer.js";
+import MorphProgressBar from "./examples/MorphProgressBar.js";
+import MorphSteppedProgress from "./examples/MorphSteppedProgress.js";
 
 const App = () => {
   return (
@@ -96,7 +98,10 @@ const App = () => {
       {/* <DragCards /> */}
       {/* <SlideInNotification /> */}
       {/* <DragCloseDrawer /> */}
-      <Practice />
+      {/* <Practice /> */}
+
+      {/* <MorphProgressBar /> */}
+      <MorphSteppedProgress />
     </div>
   );
 };
