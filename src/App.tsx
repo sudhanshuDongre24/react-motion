@@ -47,6 +47,7 @@ import SlideInNotification from "./examples/SlideInNotification.js";
 import DragCloseDrawer from "./examples/DragCloseDrawer.js";
 import MorphProgressBar from "./examples/MorphProgressBar.js";
 import MorphSteppedProgress from "./examples/MorphSteppedProgress.js";
+import SwipeToDelete from "./examples/swipeToDelete.js";
 
 const App = () => {
   return (
@@ -99,9 +100,9 @@ const App = () => {
       {/* <SlideInNotification /> */}
       {/* <DragCloseDrawer /> */}
       {/* <Practice /> */}
-
       {/* <MorphProgressBar /> */}
-      <MorphSteppedProgress />
+      {/* <MorphSteppedProgress /> */}
+      <SwipeToDelete />
     </div>
   );
 };
