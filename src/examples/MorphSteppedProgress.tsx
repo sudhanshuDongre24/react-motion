@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { AnimatePresence, motion, noop } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 const MorphSteppedProgress = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -26,9 +26,9 @@ const MorphSteppedProgress = () => {
               <>
                 <div className="relative">
                   <motion.div
-                    className={`w-10 h-10 flex items-center justify-center shrink-0 border-2 rounded-full font-semibold text-sm relative z-10 transitions-colors duration-300 ${
+                    className={`w-10 h-10 flex items-center justify-center shrink-0 border-2 rounded-full font-semibold text-sm relative z-10 transitions-colors duration-500 ease-in-out  ${
                       currentStep >= step
-                        ? "text-white bg-indigo-700 border-indigo-400 border-3"
+                        ? "text-white bg-indigo-700 border-indigo-400 border-3 "
                         : "text-gray-300 border-gray-300"
                     }`}
                     initial={false}
@@ -37,23 +37,16 @@ const MorphSteppedProgress = () => {
                     <span>{step}</span>
                   </motion.div>
                 </div>
-                {step < steps.length && (
+                {step <= steps.length - 1 && (
                   <div className="w-full h-1 rounded-full bg-gray-200 relative ">
-                    {currentStep >= step && (
-                      <AnimatePresence mode="sync">
-                        <motion.div
-                          className="absolute top-0 bottom-0 bg-indigo-600 rounded-full"
-                          initial={{ width: "0%" }}
-                          animate={{ width: "100%" }}
-                          exit={{
-                            width: "0%",
-                            opacity: 0,
-                            transition: { duration: 0.5 },
-                          }}
-                          transition={{ duration: 0.5, ease: "easeInOut" }}
-                        />
-                      </AnimatePresence>
-                    )}
+                    <motion.div
+                      className="absolute top-0 bottom-0 bg-indigo-600 rounded-full w-full"
+                      initial={{ width: 0 }}
+                      animate={{
+                        width: `${step <= currentStep ? "100%" : "0%"}`,
+                      }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                    />
                   </div>
                 )}
               </>
