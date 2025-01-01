@@ -49,6 +49,8 @@ import MorphProgressBar from "./examples/MorphProgressBar.js";
 import MorphSteppedProgress from "./examples/MorphSteppedProgress.js";
 import SwipeToDelete from "./examples/swipeToDelete.js";
 import BarPoll from "./examples/BarPoll.js";
+import TrippyScroll from "./examples/TrippyScroll.js";
+import LogoOrigami from "./examples/LogoOrigami.js";
 
 const App = () => {
   return (
@@ -104,7 +106,9 @@ const App = () => {
       {/* <MorphProgressBar /> */}
       {/* <MorphSteppedProgress /> */}
       {/* <SwipeToDelete /> */}
-      <BarPoll />
+      {/* <BarPoll /> */}
+      {/* <TrippyScroll /> */}
+      <LogoOrigami />
     </div>
   );
 };
