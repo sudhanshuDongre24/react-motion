@@ -48,6 +48,7 @@ import DragCloseDrawer from "./examples/DragCloseDrawer.js";
 import MorphProgressBar from "./examples/MorphProgressBar.js";
 import MorphSteppedProgress from "./examples/MorphSteppedProgress.js";
 import SwipeToDelete from "./examples/swipeToDelete.js";
+import BarPoll from "./examples/BarPoll.js";
 
 const App = () => {
   return (
@@ -102,7 +103,8 @@ const App = () => {
       {/* <Practice /> */}
       {/* <MorphProgressBar /> */}
       {/* <MorphSteppedProgress /> */}
-      <SwipeToDelete />
+      {/* <SwipeToDelete /> */}
+      <BarPoll />
     </div>
   );
 };

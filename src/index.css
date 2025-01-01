@@ -1059,7 +1059,7 @@ li button {
   cursor: default;
   pointer-events: none;
 }
-*/
+
 
 body {
   --from-left: 4;
@@ -1078,8 +1078,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
+*/
