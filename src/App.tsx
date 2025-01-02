@@ -51,6 +51,7 @@ import SwipeToDelete from "./examples/swipeToDelete.js";
 import BarPoll from "./examples/BarPoll.js";
 import TrippyScroll from "./examples/TrippyScroll.js";
 import LogoOrigami from "./examples/LogoOrigami.js";
+import BasicFAQ from "./examples/BasicFAQ.js";
 
 const App = () => {
   return (
@@ -108,7 +109,8 @@ const App = () => {
       {/* <SwipeToDelete /> */}
       {/* <BarPoll /> */}
       {/* <TrippyScroll /> */}
-      <LogoOrigami />
+      {/* <LogoOrigami /> */}
+      <BasicFAQ />
     </div>
   );
 };
