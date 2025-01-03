@@ -165,3 +165,36 @@ AnimatePresence works by detecting when its direct children are removed from the
   - wait: The entering child will wait until the exiting child has animated out.
   - popLayout: Exiting children will popout of layout. This allow surrounding elements to move to their new layout
 - onExitComplete - Fires when all exiting nodes have completed animating out.
+
+# Gesturs
+
+- 1. Hover Gesture Porps
+
+  - whileHover: Defines the animation to play while the element is hovered over.
+  - onHoverStart: Callback function fired when hover starts
+  - onHoverEnd: Callback function fired when hover ends
+
+- 2. Tap Gesture Props
+
+  - whileTap: Defines the animation to play while the element is being tapped
+  - onTap: Callback function fired when a gesture is completed.
+  - onTapStart: Callback function is fired when the tap starts
+  - onTapCancel: Callback function fired if the tap is canceled
+
+- 3. Drag Gesture Props
+
+  - drag: Enables dragging. Can be set to "x" , "y" or true for free drag.
+  - dragConstraints: Restricts the drag area. Can be a DOM element or pixed boundaries
+  - dragElastic: Add elasticity to the dragging motion. A value between 0 and 1
+  - dragSnaptToOrigin: Snaps the element back to its original position when released
+  - onDragStart: Callback when dragging start
+  - onDrag: Callback when dragging
+  - onDragEnd: Callback wehe draggind ends
+
+-
+- 4. Focus Gesture Props
+
+  - whileFocus: Defines the animation to play while the element is focus
+
+- 5. Custom Getures Props
+     Addition logic combined with it's animation props

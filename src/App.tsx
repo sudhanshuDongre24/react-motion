@@ -103,14 +103,14 @@ const App = () => {
       {/* <DragCards /> */}
       {/* <SlideInNotification /> */}
       {/* <DragCloseDrawer /> */}
-      {/* <Practice /> */}
       {/* <MorphProgressBar /> */}
       {/* <MorphSteppedProgress /> */}
       {/* <SwipeToDelete /> */}
       {/* <BarPoll /> */}
       {/* <TrippyScroll /> */}
       {/* <LogoOrigami /> */}
-      <BasicFAQ />
+      {/* <BasicFAQ /> */}
+      <Practice />
     </div>
   );
 };
