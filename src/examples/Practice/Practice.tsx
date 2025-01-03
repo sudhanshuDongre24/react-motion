@@ -1,4 +1,4 @@
-import { useMotionValue, motion } from "motion/react";
+import { useMotionValue, motion, AnimatePresence } from "motion/react";
 import React, { useState } from "react";
 
 const cardData = [
@@ -10,44 +10,53 @@ const cardData = [
 const Practice = () => {
   const [cards, setCards] = useState(cardData);
 
-  const handelSwipe = () => {
+  const handelSwipe = (id, direction) => {
+    console.log(`Card ${id} swipe ${direction}`);
     setCards((prevCard) => prevCard.filter((card) => card.id !== id));
   };
 
   const reorderCard = (dragIndex, hoverIndex) => {
     const reordered = Array.from(cards);
-    const [moved] = reorderCard.splice(dragIndex, 1);
+    const [moved] = reordered.splice(dragIndex, 1);
     reordered.splice(hoverIndex, 0, moved);
     setCards(reordered);
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-300 p-4">
-      <motion.div
-        className="w-full max-w-sm p-4 bg-white rounded-lg shadow-lg cursor-pointer relative"
-        style={{ x }}
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.5}
-        onDragEnd={handelSwipe}
-      >
-        <div className="text-center">
-          <h1>Swipe me</h1>
-          <p>Swipe to right to reveal or left to hide!</p>
-        </div>
-
-        {revealed && (
-          <motion.div
-            className="absolute inset-0 bg-blue-500 flex items-center justify-center text-white text-lg rounded-lg"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >
-            Content Revealed
-          </motion.div>
-        )}
-      </motion.div>
+      <h1 className="text-2xl font-bold mb-6">Swipable Card</h1>
+      <div className="w-ful max-w-md space-y-4 relative flex gap-10">
+        <AnimatePresence>
+          <div className="flex flex-col">
+            {cards.map((card, index) => (
+              <motion.div
+                key={card.id}
+                className="p-4 bg-white rounded-lg shadow-lg cursor-pointer my-4"
+                whileHover={{ scale: 1.05, zIndex: 1 }}
+                whileTap={{ scale: 0.95 }}
+                drag
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={(event, info) => {
+                  if (info.offset.x > 100) handelSwipe(card.id, "right");
+                  if (info.offset.x < -100) handelSwipe(card.id, "left");
+                }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                style={{
+                  top: index * 20,
+                  left: 0,
+                  right: 0,
+                }}
+              >
+                <h2 className="text-xl font-bold">{card.title}</h2>
+                <p>{card.content}</p>
+              </motion.div>
+            ))}
+          </div>
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
