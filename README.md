@@ -198,3 +198,29 @@ AnimatePresence works by detecting when its direct children are removed from the
 
 - 5. Custom Getures Props
      Addition logic combined with it's animation props
+
+# Scroll
+
+- Scroll-triggered: A noraml animation is triggered when an element enter the viewport.
+- Scroll-linked: Values are linked directly to scroll progress.
+
+### Scroll-triggered animations
+
+- whileInView: to set an animation target or variant when the element enters the view.
+- viewport:
+  - once: whether to trigger animation only once
+  - amount: Fraction of the element that must be visible to trigger the animation
+- useInView hook:hook for programmatic control.
+
+### Scroll-linked Animation
+
+- useScroll
+
+  - scrollX/scrollY: absolute scroll position in pixel
+  - scrollProgressX/scrollProgressY: relative Scroll progress between 0 and 1
+
+- useTransform
+
+# layout
+
+- layout Prop: The layout prop enables layout-based animations. It automatically animates when the component's layout(size, position) changes
