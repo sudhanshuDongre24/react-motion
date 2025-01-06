@@ -52,6 +52,7 @@ import BarPoll from "./examples/BarPoll.js";
 import TrippyScroll from "./examples/TrippyScroll.js";
 import LogoOrigami from "./examples/LogoOrigami.js";
 import BasicFAQ from "./examples/BasicFAQ.js";
+import LayoutAnimationTwo from "./examples/layoutAnimationTwo.js";
 
 const App = () => {
   return (
@@ -61,7 +62,6 @@ const App = () => {
       {/* <AnimationControl /> */}
       {/* <ViewBasedAnimation /> */}
       {/* <ScrollAnimation /> */}
-
       {/* Examples */}
       {/* <AnimatePresenceStack /> */}
       {/* <BoxAnimation /> */}
@@ -110,7 +110,8 @@ const App = () => {
       {/* <TrippyScroll /> */}
       {/* <LogoOrigami /> */}
       {/* <BasicFAQ /> */}
-      <Practice />
+      <LayoutAnimationTwo />
+      {/* <Practice /> */}
     </div>
   );
 };

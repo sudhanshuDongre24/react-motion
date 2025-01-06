@@ -224,3 +224,7 @@ AnimatePresence works by detecting when its direct children are removed from the
 # layout
 
 - layout Prop: The layout prop enables layout-based animations. It automatically animates when the component's layout(size, position) changes
+
+# useCycle Hook
+
+The useCycle hook is a utlity hook that helps cycle through a list of states of value. Use for animations that switch between multiple states, toggling visiblity, changing colors, or cycling through different animation.
