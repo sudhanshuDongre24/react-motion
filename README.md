@@ -228,3 +228,10 @@ AnimatePresence works by detecting when its direct children are removed from the
 # useCycle Hook
 
 The useCycle hook is a utlity hook that helps cycle through a list of states of value. Use for animations that switch between multiple states, toggling visiblity, changing colors, or cycling through different animation.
+
+```ts
+const [state, cycle] = useCycle(...states);
+```
+
+- state: The current state from the list for provided states
+- cycle: A function that cycles through the states. You can call cycle to move to the next state or pass as index to jump to a specific state

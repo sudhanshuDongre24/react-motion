@@ -53,6 +53,7 @@ import TrippyScroll from "./examples/TrippyScroll.js";
 import LogoOrigami from "./examples/LogoOrigami.js";
 import BasicFAQ from "./examples/BasicFAQ.js";
 import LayoutAnimationTwo from "./examples/layoutAnimationTwo.js";
+import LayoutSwapping from "./examples/LayoutSwapping.js";
 
 const App = () => {
   return (
@@ -110,7 +111,8 @@ const App = () => {
       {/* <TrippyScroll /> */}
       {/* <LogoOrigami /> */}
       {/* <BasicFAQ /> */}
-      <LayoutAnimationTwo />
+      {/* <LayoutAnimationTwo /> */}
+      <LayoutSwapping />
       {/* <Practice /> */}
     </div>
   );
