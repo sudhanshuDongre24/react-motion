@@ -235,3 +235,75 @@ const [state, cycle] = useCycle(...states);
 
 - state: The current state from the list for provided states
 - cycle: A function that cycles through the states. You can call cycle to move to the next state or pass as index to jump to a specific state
+
+# components
+
+## motion
+
+The motion component drives most animations in motion in React
+
+**Core Aniamation**
+
+- animate
+- initial
+- exit
+- transition
+- layout
+- whileHover
+- whileTap
+- drag
+- dragConstraints
+- dragElastic
+- dragMomentum
+
+**Gesture and Interaction Props**
+
+- onHoverStart
+- onHoverEnd
+- onTapStart
+- onTap
+- onTapCancel
+- onDragStart
+- onDrag
+- onDragEnd
+
+**Scroll Animation Props**
+
+- viewport
+- custom
+- keyframers
+
+**Motion Value Props**
+
+- animate
+- style
+
+**Svg-specific Props**
+
+- pathLength:
+- pathOffset
+
+**Other Utility Props**
+
+- style
+- custom
+- onAnimationStart
+- onAnimatinComplete
+
+**Custom components**
+
+`motion.create()` is a utility that allows you to create custom animation components by extending the functionality of existing HTML and SVG elements. It simplifies the process of intergrating motion components with custom HTML and third party components that don't inheretly support motion animation
+
+```js
+const Components = motion.create(Componet);
+
+//React 18
+const Component = React.forwardRed((prop, ref) => {
+  return <div ref={ref} />;
+});
+
+//React 19
+const Components = (props) => {
+  return <div ref={props.ref} />;
+};
+```

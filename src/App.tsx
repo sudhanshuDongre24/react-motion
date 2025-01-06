@@ -112,8 +112,8 @@ const App = () => {
       {/* <LogoOrigami /> */}
       {/* <BasicFAQ /> */}
       {/* <LayoutAnimationTwo /> */}
-      <LayoutSwapping />
-      {/* <Practice /> */}
+      {/* <LayoutSwapping /> */}
+      <Practice />
     </div>
   );
 };
