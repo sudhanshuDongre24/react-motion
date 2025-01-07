@@ -307,3 +307,14 @@ const Components = (props) => {
   return <div ref={props.ref} />;
 };
 ```
+
+## useMotionTemplete
+
+useMotionTemplete create a new motion value from a string templete containing other motion values
+
+```ts
+const x = useMotionValue(100);
+const transform = useMotionTemplete`transform(${x}px)`;
+```
+
+motionValueTemplete is a function used in Framer motion to define how a motionValue should be interpolated and represented as a string. It's particularly usefull for complex CSS properties that requires specific formatting like transform properties (translate, rotate, scale) or box-shadow
