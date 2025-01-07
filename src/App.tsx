@@ -54,6 +54,7 @@ import LogoOrigami from "./examples/LogoOrigami.js";
 import BasicFAQ from "./examples/BasicFAQ.js";
 import LayoutAnimationTwo from "./examples/layoutAnimationTwo.js";
 import LayoutSwapping from "./examples/LayoutSwapping.js";
+import TextParallexScroll from "./examples/TextParallexScroll.js";
 
 const App = () => {
   return (
@@ -113,7 +114,8 @@ const App = () => {
       {/* <BasicFAQ /> */}
       {/* <LayoutAnimationTwo /> */}
       {/* <LayoutSwapping /> */}
-      <Practice />
+      <TextParallexScroll />
+      {/* <Practice /> */}
     </div>
   );
 };
