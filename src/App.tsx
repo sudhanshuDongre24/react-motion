@@ -116,8 +116,8 @@ const App = () => {
       {/* <LayoutAnimationTwo /> */}
       {/* <LayoutSwapping /> */}
       {/* <TextParallexScroll /> */}
-      <SmoothScrollHero />
-      {/* <Practice /> */}
+      {/* <SmoothScrollHero /> */}
+      <Practice />
     </div>
   );
 };
