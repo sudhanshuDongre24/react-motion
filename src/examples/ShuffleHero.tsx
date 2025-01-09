@@ -1,8 +1,28 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 const ShuffleHero = () => {
-  return <div>ShuffleHero</div>;
+  return (
+    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 max-w-6xl mx-auto">
+      <div>
+        <span className="block mb-4 text-xs md:text-sm text-indigo-500 font-medium">
+          Better Every Day
+        </span>
+        <h3 className="text-4xl md:text-6xl font-semibold">
+          Let's Change it up a bit
+        </h3>
+        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed totam
+          voluptas voluptate doloremque nesciunt repudiandae culpa magni dolores
+          recusandae quisquam.
+        </p>
+        <button className="bg-indigo-500 text-white font-medium py-3 px-2 rounded transition-all hover:bg-indigo-600 active::scale-95">
+          Find a Class
+        </button>
+      </div>
+      <ShuffleGrid />
+    </section>
+  );
 };
 
 export default ShuffleHero;
@@ -129,7 +149,7 @@ const generateSquares = () => {
       layout
       transition={{ duration: 1.5, type: "spring" }}
       className="w-full h-full"
-      style={{ backgroundImage: `url${sq.src}`, backgroundSize: "cover" }}
+      style={{ backgroundImage: `url(${sq.src})`, backgroundSize: "cover" }}
     />
   ));
 };
@@ -137,5 +157,22 @@ const generateSquares = () => {
 const ShuffleGrid = () => {
   const timeoutRef = useRef(null);
   const [squares, setSquares] = useState(generateSquares());
-  return;
+
+  useEffect(() => {
+    shuffleSquares();
+
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
+
+  const shuffleSquares = () => {
+    setSquares(generateSquares());
+
+    timeoutRef.current = setTimeout(shuffleSquares, 3000);
+  };
+
+  return (
+    <div className="grid grid-cols-4 grid-row-4 h-[450px] gap-1">
+      {squares.map((sq) => sq)}
+    </div>
+  );
 };
