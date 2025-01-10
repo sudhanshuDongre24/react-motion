@@ -318,3 +318,12 @@ const transform = useMotionTemplete`transform(${x}px)`;
 ```
 
 motionValueTemplete is a function used in Framer motion to define how a motionValue should be interpolated and represented as a string. It's particularly usefull for complex CSS properties that requires specific formatting like transform properties (translate, rotate, scale) or box-shadow
+
+## Motion Config
+
+The MotionConfig component can be used to set configuration options for all child motion components.
+
+**Props**
+
+- Transition: Define a fallback transition to use for all child motion components.
+- reduceMotion:

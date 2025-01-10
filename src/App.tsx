@@ -57,6 +57,7 @@ import LayoutSwapping from "./examples/LayoutSwapping.js";
 import TextParallexScroll from "./examples/TextParallexScroll.js";
 import SmoothScrollHero from "./examples/SmoothScrollHero.js";
 import ShuffleHero from "./examples/ShuffleHero.js";
+import AuroraHero from "./examples/AuroraHero.js";
 
 const App = () => {
   return (
@@ -118,8 +119,9 @@ const App = () => {
       {/* <LayoutSwapping /> */}
       {/* <TextParallexScroll /> */}
       {/* <SmoothScrollHero /> */}
-      {/* <Practice /> */}
-      <ShuffleHero />
+      {/* <ShuffleHero /> */}
+
+      <Practice />
     </div>
   );
 };
