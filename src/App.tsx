@@ -58,6 +58,7 @@ import TextParallexScroll from "./examples/TextParallexScroll.js";
 import SmoothScrollHero from "./examples/SmoothScrollHero.js";
 import ShuffleHero from "./examples/ShuffleHero.js";
 import AuroraHero from "./examples/AuroraHero.js";
+import VerticalAccordians from "./examples/VerticalAccordians.js";
 
 const App = () => {
   return (
@@ -120,8 +121,8 @@ const App = () => {
       {/* <TextParallexScroll /> */}
       {/* <SmoothScrollHero /> */}
       {/* <ShuffleHero /> */}
-
-      <Practice />
+      {/* <Practice /> */}
+      <VerticalAccordians />
     </div>
   );
 };
