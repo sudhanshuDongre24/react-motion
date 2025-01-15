@@ -59,6 +59,7 @@ import SmoothScrollHero from "./examples/SmoothScrollHero.js";
 import ShuffleHero from "./examples/ShuffleHero.js";
 import AuroraHero from "./examples/AuroraHero.js";
 import VerticalAccordians from "./examples/VerticalAccordians.js";
+import RevealBento from "./examples/RevealBento.js";
 
 const App = () => {
   return (
@@ -122,7 +123,8 @@ const App = () => {
       {/* <SmoothScrollHero /> */}
       {/* <ShuffleHero /> */}
       {/* <Practice /> */}
-      <VerticalAccordians />
+      {/* <VerticalAccordians /> */}
+      <RevealBento />
     </div>
   );
 };
