@@ -60,6 +60,7 @@ import ShuffleHero from "./examples/ShuffleHero.js";
 import AuroraHero from "./examples/AuroraHero.js";
 import VerticalAccordians from "./examples/VerticalAccordians.js";
 import RevealBento from "./examples/RevealBento.js";
+import ClipPathLinks from "./examples/ClipPathLinks.js";
 
 const App = () => {
   return (
@@ -124,7 +125,8 @@ const App = () => {
       {/* <ShuffleHero /> */}
       {/* <Practice /> */}
       {/* <VerticalAccordians /> */}
-      <RevealBento />
+      {/* <RevealBento /> */}
+      <ClipPathLinks />
     </div>
   );
 };
