@@ -62,6 +62,7 @@ import VerticalAccordians from "./examples/VerticalAccordians.js";
 import RevealBento from "./examples/RevealBento.js";
 import ClipPathLinks from "./examples/ClipPathLinks.js";
 import BouncyCardFeatures from "./examples/BouncyCardFeatures.js";
+import MultistepWizard from "./examples/MultistepWizard.js";
 
 const App = () => {
   return (
@@ -124,11 +125,12 @@ const App = () => {
       {/* <TextParallexScroll /> */}
       {/* <SmoothScrollHero /> */}
       {/* <ShuffleHero /> */}
-      {/* <Practice /> */}
       {/* <VerticalAccordians /> */}
       {/* <RevealBento /> */}
       {/* <ClipPathLinks /> */}
-      <BouncyCardFeatures/>
+      {/* <BouncyCardFeatures/> */}
+      <MultistepWizard />
+      {/* <Practice /> */}
     </div>
   );
 };
