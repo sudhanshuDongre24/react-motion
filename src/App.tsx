@@ -61,6 +61,7 @@ import AuroraHero from "./examples/AuroraHero.js";
 import VerticalAccordians from "./examples/VerticalAccordians.js";
 import RevealBento from "./examples/RevealBento.js";
 import ClipPathLinks from "./examples/ClipPathLinks.js";
+import BouncyCardFeatures from "./examples/BouncyCardFeatures.js";
 
 const App = () => {
   return (
@@ -126,7 +127,8 @@ const App = () => {
       {/* <Practice /> */}
       {/* <VerticalAccordians /> */}
       {/* <RevealBento /> */}
-      <ClipPathLinks />
+      {/* <ClipPathLinks /> */}
+      <BouncyCardFeatures/>
     </div>
   );
 };
