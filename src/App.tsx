@@ -63,6 +63,7 @@ import RevealBento from "./examples/RevealBento.js";
 import ClipPathLinks from "./examples/ClipPathLinks.js";
 import BouncyCardFeatures from "./examples/BouncyCardFeatures.js";
 import MultistepWizard from "./examples/MultistepWizard.js";
+import SquishyCard from "./examples/SquishyCard.js";
 
 const App = () => {
   return (
@@ -129,7 +130,8 @@ const App = () => {
       {/* <RevealBento /> */}
       {/* <ClipPathLinks /> */}
       {/* <BouncyCardFeatures/> */}
-      <MultistepWizard />
+      {/* <MultistepWizard /> */}
+      <SquishyCard />
       {/* <Practice /> */}
     </div>
   );
