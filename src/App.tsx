@@ -64,6 +64,7 @@ import ClipPathLinks from "./examples/ClipPathLinks.js";
 import BouncyCardFeatures from "./examples/BouncyCardFeatures.js";
 import MultistepWizard from "./examples/MultistepWizard.js";
 import SquishyCard from "./examples/SquishyCard.js";
+import HoverDevCard from "./examples/HoverDevCard.js";
 
 const App = () => {
   return (
@@ -131,7 +132,8 @@ const App = () => {
       {/* <ClipPathLinks /> */}
       {/* <BouncyCardFeatures/> */}
       {/* <MultistepWizard /> */}
-      <SquishyCard />
+      {/* <SquishyCard /> */}
+      <HoverDevCard />
       {/* <Practice /> */}
     </div>
   );
