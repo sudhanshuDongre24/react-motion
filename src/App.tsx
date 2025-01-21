@@ -65,6 +65,8 @@ import BouncyCardFeatures from "./examples/BouncyCardFeatures.js";
 import MultistepWizard from "./examples/MultistepWizard.js";
 import SquishyCard from "./examples/SquishyCard.js";
 import HoverDevCard from "./examples/HoverDevCard.js";
+import MotionButton from "./examples/MotionButton.js";
+import "./index.css";
 
 const App = () => {
   return (
@@ -133,7 +135,8 @@ const App = () => {
       {/* <BouncyCardFeatures/> */}
       {/* <MultistepWizard /> */}
       {/* <SquishyCard /> */}
-      <HoverDevCard />
+      {/* <HoverDevCard /> */}
+      <MotionButton />
       {/* <Practice /> */}
     </div>
   );
