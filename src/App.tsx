@@ -67,6 +67,7 @@ import SquishyCard from "./examples/SquishyCard.js";
 import HoverDevCard from "./examples/HoverDevCard.js";
 import MotionButton from "./examples/MotionButton.js";
 import "./index.css";
+import FoldableMap from "./examples/FoldableMap/FoldableMap.js";
 
 const App = () => {
   return (
@@ -136,7 +137,8 @@ const App = () => {
       {/* <MultistepWizard /> */}
       {/* <SquishyCard /> */}
       {/* <HoverDevCard /> */}
-      <MotionButton />
+      {/* <MotionButton /> */}
+      <FoldableMap />
       {/* <Practice /> */}
     </div>
   );
