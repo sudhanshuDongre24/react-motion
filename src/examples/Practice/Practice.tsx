@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Practice = () => {
+const Practice = () => {
   return <div>Practice</div>;
 };
+
+export default Practice;
