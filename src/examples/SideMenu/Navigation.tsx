@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "motion/react";
+import MenuItem from "./MenuItem";
 
 const variants = {
   open: {
@@ -10,7 +12,13 @@ const variants = {
 };
 
 const Navigation = () => {
-  return <div>Navigation</div>;
+  return (
+    <motion.ul variants={variants}>
+      {[0, 1, 2, 3, 4].map((i) => (
+        <MenuItem i={i} key={i} />
+      ))}
+    </motion.ul>
+  );
 };
 
 export default Navigation;
