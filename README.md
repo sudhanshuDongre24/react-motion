@@ -327,3 +327,50 @@ The MotionConfig component can be used to set configuration options for all chil
 
 - Transition: Define a fallback transition to use for all child motion components.
 - reduceMotion:
+
+# Transition Animation
+
+A Transition defines how a animation moves between its start and end value. It controls the timing, easeing and interpolation of the animation, giving you fine-grained control over the behavior.
+
+Common Properties
+
+```ts
+
+ transition:{
+  duration?:number; // how long animation last
+  delay?:number; // Add a delay before the animation starts
+  ease?:string | [number, number, number, number]; // Specifies the easing function for the animation
+  repeat:number; // Repeat the animation a specified the number of times.
+  repeatType?: "loop" | "reverse" | "mirror";
+  // loop: Loop the animation from start to end.
+  // reverse: Alternates the animation between forward and reverse directions.
+  // mirror: Similar to reverse, but repeat both forward and backward
+  repeatDelay?:number; // Add a delay between repeats.
+ }
+
+```
+
+**Transition Settings**
+
+`type`
+
+default:Dynamic
+<br/>
+Type of animation, `tween`, `spring` or `inertia` or `keyframse`
+<br/>
+
+Tween animation are set with a duration and easing curve.
+Spring animation are either physics-based or duration-based.
+
+physics-based spring animation are set via stiffness, damping and mass.
+
+`Tween Animation`
+
+```ts
+- ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | [number, number, number, number]
+
+- from: number | string
+```
+
+`staggerChildren`: Delay Between children animations.
+`times`: When animating multiple keyframes, time can be used to adjust the position of each keyframe throughout the animaton.

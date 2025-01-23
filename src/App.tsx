@@ -139,8 +139,9 @@ const App = () => {
       {/* <HoverDevCard /> */}
       {/* <MotionButton /> */}
       {/* <FoldableMap /> */}
-      <SideMenu />
-      {/* <Practice /> */}
+      {/* <SideMenu /> */}
+
+      <Practice />
     </div>
   );
 };
