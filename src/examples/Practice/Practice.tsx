@@ -1,10 +1,16 @@
-import { animate, motion } from "motion/react";
-import React, { useEffect, useRef } from "react";
+import { motion } from "motion/react";
 
 const Practice = () => {
-  const divRef = useRef(null);
-  useEffect(() => animate(divRef.current, {}), []);
-  return <motion.div>Practice</motion.div>;
+  return (
+    <motion.div
+      drag
+      dragConstraints={{ left: 0, right: 300, top: 0, bottom: 300 }}
+      dragElastic={0.5}
+      className="w-[100px] h-[100px] bg-sky-700 m-auto rounded-xl"
+    >
+      temp
+    </motion.div>
+  );
 };
 
 export default Practice;

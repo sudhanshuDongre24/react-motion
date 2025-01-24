@@ -367,10 +367,81 @@ physics-based spring animation are set via stiffness, damping and mass.
 `Tween Animation`
 
 ```ts
-- ease: "linear" | "easeIn" | "easeOut" | "easeInOut" | [number, number, number, number]
-
-- from: number | string
+type Tween = {
+  ease:
+    | "linear"
+    | "easeIn"
+    | "easeOut"
+    | "easeInOut"
+    | "circIn"
+    | "circOut"
+    | "circOut"
+    | "circInOut"
+    | "backIn"
+    | "backOut"
+    | "backInOut"
+    | "anticipate"
+    | [number, number, number, number];
+  from: number | string;
+};
 ```
 
 `staggerChildren`: Delay Between children animations.
 `times`: When animating multiple keyframes, time can be used to adjust the position of each keyframe throughout the animaton.
+
+`Spring Animation`
+
+Spring animation are either physics-based or duration based.
+physics - stiffness, damping and mass. Incorporate the velocity of existing gesture or animation.
+duration - duration and bounce.
+
+```ts
+interface Spring {
+  stiffness: number; //Controls the rigidity of the spring (higher  values = stiffer motion). Default 1
+  damping: number; // Reduces oscillation or bounce (lower value = more bounce). Default 10
+  mass: number; // Controls the "weight" of the spring object (higer values = slower motion) Default 1
+  bounce: number; // A simpler way to control bounce (value between 0 and 1). Default 0.25
+  resetSpeed: number; // Animation stops when speed fall below this threshold Default 0.1
+  resetDelta: number; // Animation Stops when displacement fall below this threshold. Default:0.1
+  visualDuration: number; // override duration, animation will take to visually appear to reach its target.
+}
+```
+
+`Inertia Animation`
+
+This type of animation continues movement after a user interaction
+and gradually slow down due to friction-like behavior.
+
+- Post-Drag animation: When you want a element to continue moving naturally after being dragged and then slow down.
+- Fling Effect: When something should be decelerate after being "thrown" or swiped.
+
+```ts
+type Inertia = {
+  power: number; // Default: 0.8 A
+  timeConstant: number;
+  modifyTarget: number;
+  min: number;
+  max: number;
+  bounceStiffness: number;
+  bounceDamping: number;
+  velocity: number;
+  resetDelta: number;
+};
+```
+
+`Orchestration Animation`
+
+Refer to the animation of synchronizing and coordinating multiple animations so they work together harmoniously. It is controlled by the order, timing and dependencies between animation
+
+```ts
+type Orchestration = {
+  delay: number;
+  repeat: number;
+  repeatType: number;
+  when: "beforeChildren" | "afterChildren" | false;
+  delayChildren: number;
+  staggerChildren: number; // Default:0
+  staggerDirection: number; // Default:1 Direction in which to stagger Children . 1 will stagger from the first to last child while -1 stagger form last to first.
+  at: "<" | "=" | number; // Allow precise control over when animations start in sequence.
+};
+```
