@@ -492,3 +492,32 @@ _useCase_
 2. Imager Viewer: Implement drag-to-move functionality in galleries
 3. Swipeable Cards: Use pan gestures to swipe cards left or right
 4. Drag and Drop: Enable drag-and-drop UI for task like rearrnging items.
+
+# Scroll Animation
+
+Scroll animation are used to create dynamice engaging user experiences by animating element based on the user's scorll position.
+
+**Type of scroll Animation**
+
+1. Reveal Animation: Element fade in, scale or slide as the enter the viewport
+2. Parallex Animation: Elmemts move at a slower or faster rate than scroll.
+3. Progress Animation: A progress bar or scroll-linked animations shows how far the user has scrolled
+4. Trigger Animation: Specific animations are triggered when the srolls to a particular section.
+
+```ts
+interface Scroll {
+  initial; // Defines the initial animation state of the element
+  whileInView; // Triggeres animation when the element enters the viewport.
+  transition; // Specifies how the animation progresses
+  useScroll; // Tracks global or specific element scroll position
+  useTransform; // Maps scroll progress to specific animation value.
+}
+```
+
+**Use cases for scorll animations**
+
+1. Content Reveal: Animate section as user scroll
+2. Sticky Header: Animate a header based on the scorll position
+3. Scroll Progress Bars: Show scorll progress dynamically
+4. Parallax Effect: Add dept and interactictivity to a page
+5. Hero Animation: Animate the landing screen dynamically as user scroll.
