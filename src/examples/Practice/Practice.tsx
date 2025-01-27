@@ -1,14 +1,15 @@
+import React from "react";
 import { motion } from "motion/react";
 
 const Practice = () => {
   return (
     <motion.div
       drag
-      dragConstraints={{ left: 0, right: 300, top: 0, bottom: 300 }}
-      dragElastic={0.5}
-      className="w-[100px] h-[100px] bg-sky-700 m-auto rounded-xl"
+      dragConstraints={{ left: -200, right: 200, top: -100, bottom: 100 }}
+      onPan={(event, info) => console.log("Panning at:", info.point)}
+      className="w-[150px] h-[150px] bg-green-400 rounded-xl flex justify-center items-center"
     >
-      temp
+      Practice
     </motion.div>
   );
 };

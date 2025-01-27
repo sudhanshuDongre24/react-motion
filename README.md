@@ -445,3 +445,50 @@ type Orchestration = {
   at: "<" | "=" | number; // Allow precise control over when animations start in sequence.
 };
 ```
+
+- at: It gives you way to orchestrate the animation between to diferent element.
+
+# Gesture Animation
+
+```ts
+interface gesture {
+  whileHover; // Animates the element while it's hovered
+  whileTap; //Animates the element while it' pressed or tapped
+  whileDrag; // Animates the element while it's being dragged.
+  onHoverStart; // Callback function triggered when hover starts.
+  onHoverEnd; // Callback function triggered when hover ends
+  onTapStart; // Callback function when tap starts
+  onTapEnd; // Callback function when tap ends.
+  drag; // Enable drag functionality for the element.
+  dragConstraints; // Defines the boundries within which the block element can be dragged.
+  dragElastic; // Controls the elasticity or "bounce-back"  effect during dragging.
+  dragTransition; // Specifices how the drag animation behaves.
+}
+```
+
+_onTapEnd:_ When the tap is successfully completed within bounds.Detects successful taps
+_onTapCancel:_ When the tap is canceled. Detect canceled on incomplete taps.
+
+**Use Cases of Gesture Animations**
+
+1. **Interactive Button:** Add hover and tap animations to button for feedback.
+2. **Draggable Cards:** Create draggable element in Kanban board or carousel components.
+3. **Image Galleries:** Enable Swipe gestures for naviagation.
+4. **Interacitve Charts:** Use drag gestures for resizing or selecting area.
+5. **Custom Slider:** Combine drag and elasticity for sliders or progress bars.
+
+**Pan Gesturs**
+
+Pan Gestures are triggered when the user moves their pointer or figure over an elemet while pressing or touching it.
+Pan gestures provide fine-grained control over user input and pointer movement, allowing for high interactive and dynamice interfaces.
+
+- onPanStart: Triggered when the user start panning
+- onPan: Triggered continuously as the user pans the element
+- onPanEnd: Triggered when the user stops panning or lift their pointer.
+
+_useCase_
+
+1. Interative Slider: Allow users to slide through a range of value
+2. Imager Viewer: Implement drag-to-move functionality in galleries
+3. Swipeable Cards: Use pan gestures to swipe cards left or right
+4. Drag and Drop: Enable drag-and-drop UI for task like rearrnging items.
