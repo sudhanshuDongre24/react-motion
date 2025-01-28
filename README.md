@@ -521,3 +521,236 @@ interface Scroll {
 3. Scroll Progress Bars: Show scorll progress dynamically
 4. Parallax Effect: Add dept and interactictivity to a page
 5. Hero Animation: Animate the landing screen dynamically as user scroll.
+
+**Scroll Trigger Animation**
+
+Scroll triggered Animations are just normal animations that fires when an element enters of leaves the viewport.
+
+_whileInView_ Prop: to set an animation target or variant when the element enters the view.
+_viewport_ Prop: options to set once:true so once an element has entered the viewport, it won't animate backout.
+_Changing scroll Container_: By default element will be considered withing the viewport when it enters/ leave the window. This can be changed by providing the ref of another scrollable element.
+_setting state_ to set state when an element (not just motion component) enters and leaves the viewport with the useInView hook.
+
+**Scroll-linked animations**
+
+Scroll-linked animations are created using motion values and useScroll hook.
+It return four motion values, two that store offset in pixel(scrollX/Y) and two store scroll Progress as a value between 0 and 1.
+
+_Value smoothing_: This value can be smoothed by passing it through useSpring.
+_Transform other values_: With the useTransform hook, it's easy to use the progress motion values to mix between any value, like colors.
+
+# Layout Animation
+
+```ts
+interface Layout {
+  layout; // Enables automatic layout animations
+  layoutId; // Animates shared element between components during a transition
+  layOutDependency; // A dependency that triggers layout recalculations for animation
+  onLayouyAnimationComplete; // A callback triggered when the layout animation is complete.
+  transition; // Customizes the animation's durarion, easing, and type for layout changes.
+}
+```
+
+**Use Cases for layout Animations**
+
+1. Expanding Cards:
+2. Dynamic List:
+3. Shared Element:
+4. Responsive Layouts:
+
+**When to use Layout Animations**
+
+1. You want to enhance UI responsiveness
+2. Your layout changes dynamically
+3. You need smooth transitions between different states of a UI component.
+
+_CSS changes should happend immediately view style to animate as layout will take care of the animation._
+
+**Animating within scrollable element**
+
+To correctly animate layout within scrollable element you need to provide them the layout prop.
+
+**To Correctly animate layout within fixed elements, you need to provide them the layoutRoot Prop.**
+
+**Group layout animations**
+
+Layout animations are triggered when a component re-renders and it layout has changed.
+
+We can synchronise layout changes across multiple components by wrapping them in LayoutGroup component.
+
+**Scale Correction**
+
+All layout animations are performed using the transform style, resulting in smooth framerater.
+
+# Components
+
+## motion component
+
+### Custom Componenets
+
+```js
+const MotionComponent = motion.create(Component);
+```
+
+_for React18_
+
+```js
+const Component = React.forwarRef((props, ref) => {
+  return <div ref={ref}>
+});
+```
+
+_for React19_
+
+```js
+const Component = (props) => {
+  return <div ref={props.ref} />;
+};
+```
+
+**Props**
+
+```ts
+interface Animate {
+  initial; // The initial visual state of the motion component. False to disable the enter animation.
+  variants; // The variants for this component
+  animate; // A target to animate to on enter and on update
+  exit; // A target to animate to when a component is removed fromt the tree. Component Removed must be a direct child of AnimatePresence to enable this animation
+  transitions; // The default transitions for this component to use when an animation props has no transition defined
+  style; // The normal React DOM style Props.
+  onUpdate; // Callback triggered every frame any value on the motion component updates.
+  onAnimationStart; // callback triggered when any animation starts.
+  onAnimationComplete; // callback triggered when any animation completes
+}
+
+interface Hover {
+  whileHover; // Target or variants to label to while the hover gesture is active
+  onHoverStart; // Callback function that fires when a pointer starts hovering over the component.
+  onHoverEnd; // Callback function that fires when a pointer stop hovering over the component.
+}
+
+interface Tap {
+  whileTap;
+  onTapStart;
+  onTap;
+  onTapCancel;
+}
+
+interface Focus {
+  whileFocus;
+}
+
+interface Pan {
+  onPan;
+  onPanStart;
+  onPanEnd;
+}
+
+interface Drag {
+  drag;
+  whileDrag;
+  dragConstraints;
+  dragSnapToOrigin;
+  dragElastic;
+  dragMomentum;
+  dragTransition;
+  dragDirectionLock;
+  dragProppagation;
+  dragControls;
+  dragListener;
+  onDrag;
+  onDragStart;
+  onDragEnd;
+  onDirectionLock;
+}
+
+interface Viewport {
+  whileInView;
+  viewport;
+  onViewportEnter;
+}
+
+interface Layout {
+  layout;
+  layoutId;
+  layoutDependency;
+  layoutScroll;
+  layoutRoot;
+  onLayoutAnimationStart;
+  onLayoutAnimationComplete;
+}
+
+interface Advanced {
+  inherit;
+  custom;
+  transformTemplete;
+}
+
+interface AnimationProps {
+  animate; //	Specifies the animation target values (final state).
+  initial; //Defines the initial animation values (starting state).exit	Specifies the animation values when the component unmounts (with AnimatePresence).
+  variants; //Allows defining multiple animation states in a reusable way.
+  whileHover; //Defines the animation state when the element is hovered.
+  whileTap; //Defines the animation state when the element is tapped.
+  whileDrag; //Defines the animation state while dragging.
+  whileFocus; //Defines the animation state while the element is focused.
+  whileInView; //Animates the element when it comes into the viewport.
+  layout; //Enables smooth layout transitions.
+}
+
+interface TransitionProps {
+  type; //	Specifies the type of animation (spring, tween, inertia, etc.).
+  duration; //	Duration of the animation (in seconds).
+  delay; //	Adds a delay before the animation starts.
+  stiffness; //	Controls the "tightness" of a spring animation (only for spring animations).
+  damping; //	Controls how quickly a spring animation slows down (for spring).
+  mass; //	Adjusts the weight of the spring animation.
+  bounce; //	Adds a bounce effect (0 = no bounce, 1 = full bounce).
+  ease; //	Sets the easing function (e.g., easeIn, easeOut, easeInOut, etc.).
+  repeat; //	Number of times to repeat the animation.
+  repeatType; //	Type of repeat: loop, reverse, or mirror.
+}
+
+interface GestureProps {
+  onHoverStart; //	Callback triggered when the user starts hovering.
+  onHoverEnd; //	Callback triggered when the user stops hovering.
+  onTapStart; //	Callback triggered when the user starts tapping.
+  onTap; //	Callback triggered when the user taps the element.
+  onTapCancel; //	Callback triggered when a tap is canceled (e.g., finger slides off).
+  onDragStart; //	Callback triggered when the user starts dragging.
+  onDrag; //	Callback triggered during dragging.
+  onDragEnd; //	Callback triggered when dragging ends.
+}
+
+interface DragProps {
+  drag; //	Enables drag behavior (true, false, or a specific axis like "x" or "y").
+  dragConstraints; //	Restricts drag movement within a specific area (e.g., {top, left, bottom, right}).
+  dragElastic; //	Adds elasticity to the drag gesture (default: 0.5).
+  dragSnapToOrigin; //	Snaps the element back to its original position when dragging ends.
+}
+
+interface InViewProps {
+  whileInView; //	Defines the animation state when the element is in the viewport.
+  viewport; //	Options for controlling viewport settings like margin, once, and amount.
+  onViewportEnter; //	Callback triggered when the element enters the viewport.
+  onViewportLeave; //	Callback triggered when the element leaves the viewport.
+}
+
+interface LayoutAnimationProps {
+  layout; //	Enables smooth layout transitions when the element's position changes.
+  layoutId; //	Used with AnimatePresence for shared element transitions.
+}
+
+interface EventListners {
+  onAnimationStart; //	Callback when the animation starts.
+  onAnimationComplete; //	Callback when the animation finishes.
+  onViewportEnter; //	Triggered when the element enters the viewport.
+  onViewportLeave; //	Triggered when the element leaves the viewport.
+}
+
+interface OtherProps {
+  style; //	Add inline styles to the motion component.
+  className; //	Add custom CSS classes to the motion component.
+  ref; //Attach a React ref to the motion component for DOM manipulation.
+}
+```
