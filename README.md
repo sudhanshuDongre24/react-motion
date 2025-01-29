@@ -630,9 +630,9 @@ interface Hover {
 }
 
 interface Tap {
-  whileTap;
-  onTapStart;
-  onTap;
+  whileTap; // Target or variants to label to while the tap gesture is active.
+  onTapStart; // Callback function that fires when a pointer start pressing the component.
+  onTap; // Callback function that fires when a pointer stops pressing the component and the pointer was released inside the component.
   onTapCancel;
 }
 
