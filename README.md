@@ -637,53 +637,53 @@ interface Tap {
 }
 
 interface Focus {
-  whileFocus;
+  whileFocus; // Target or variants to label to while the focus gesture in active.
 }
 
 interface Pan {
-  onPan;
-  onPanStart;
-  onPanEnd;
+  onPan; // Callback function that fires when the pan gesture is recognised on this element.
+  onPanStart; // Callback function that fires when a pan gesture starts. Providing the triggering PointerEvent and info.
+  onPanEnd; // Callback function that fires when a pan gesture ends.
 }
 
 interface Drag {
-  drag;
-  whileDrag;
-  dragConstraints;
-  dragSnapToOrigin;
-  dragElastic;
-  dragMomentum;
-  dragTransition;
-  dragDirectionLock;
-  dragProppagation;
-  dragControls;
-  dragListener;
-  onDrag;
-  onDragStart;
-  onDragEnd;
-  onDirectionLock;
+  drag; // Enable dragging for this element.
+  whileDrag; // Target or variants to label to while to drag gesture is active
+  dragConstraints; // Applies constraints on the draggable area.
+  dragSnapToOrigin; //  If true, the draggable element will animate back to its center/origin when released.
+  dragElastic; //The degree of movement allowed outside constraints. 0 = no movement, 1 = full movement.
+  dragMomentum; //Apply momentum from the pan gesture to the component when dragging finishes. Set to true by default.
+  dragTransition; //Allows you to change dragging momentum transition.
+  dragDirectionLock; //Locks drag direction into the soonest detected direction.
+  dragProppagation; //Allows drag gesture propagation to child components.
+  dragControls; //Usually, dragging is initiated by pressing down on a component and moving it.
+  dragListener; // Determines whether to trigger the drag gesture from event listeners.
+  onDrag; //Callback function that fires when the drag gesture is recognised on this element.
+  onDragStart; //Callback function that fires when a drag gesture starts. Provided the triggering PointerEvent and info.
+  onDragEnd; //Callback function that fires when a drag gesture ends. Provided the triggering PointerEvent and info.
+  onDirectionLock; //Callback function that fires a drag direction is determined.
 }
 
 interface Viewport {
-  whileInView;
-  viewport;
-  onViewportEnter;
+  whileInView; // Target or variants to label to while the element is in view.
+  viewport; // Options to define how the element is tracked within the viewport
+  onViewportEnter; // Callback function that fires when an element enter the viewport Provided the IntersectionObserverEntry.
 }
 
 interface Layout {
-  layout;
-  layoutId;
-  layoutDependency;
-  layoutScroll;
-  layoutRoot;
-  onLayoutAnimationStart;
-  onLayoutAnimationComplete;
+  layout; // If true the component will animate changes to its layout.
+  layoutId; // If set, this component will animate changes to its layout.
+  layoutDependency; // ayout changes are detected every render. To reduce measurements and thus improve performance, you can pass a layoutDependency prop. Measurements will only occur when this value changes.
+  layoutScroll; // For layout animations to work correctly within scrollable elements, their scroll offset needs measuring
+  layoutRoot; //For layout animations to work correctly within position: fixed elements, we need to account for page scroll. Add layoutRoot to mark an element as position: fixed.
+  onLayoutAnimationStart; //A callback to run when a layout animation starts.
+  onLayoutAnimationComplete; //A callback to run when a layout animation completes.
 }
 
 interface Advanced {
-  inherit;
-  custom;
-  transformTemplete;
+  inherit; //Set to false to prevent a component inheriting or propagating changes in a parent variant.
+  custom; //Custom data to pass through to dynamic variants.
+  transformTemplete; //transforms are applied in order of translate, scale, rotate and skew.
 }
 
 interface AnimationProps {
@@ -754,3 +754,10 @@ interface OtherProps {
   ref; //Attach a React ref to the motion component for DOM manipulation.
 }
 ```
+
+## AnimatePresence
+
+AnimatePresence makes exit animation easy. By wrapping one or more motion components with animatePresence, we gain access to the exit animation prop
+
+AnimatePresence works by detecting when its direct children are removed from the react tree.
+_Direct Children must have a unique key prop so AnimationPresence can track their presence in the tree._
