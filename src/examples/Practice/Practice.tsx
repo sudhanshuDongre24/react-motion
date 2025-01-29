@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 
-function Practice() {
-  const [isOpen, setIsOpen] = useState(false);
+const Practice = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
   return (
     <div>
-      {!isOpen ? (
+      <button onClick={() => setIsVisible(!isVisible)}>Toggle</button>
+      {isVisible && (
         <motion.div
-          layoutId="box"
-          className="w-[100px] h-[100px] bg-blue-500 rounded-lg cursor-pointer mx-[100px] my-auto"
-          onClick={() => setIsOpen(true)}
-        />
-      ) : (
-        <motion.div
-          layoutId="box"
-          className="w-[100px] h-[100px] bg-blue-500 rounded-xl cursor-pointer mx-[100px] my-auto"
-          onClick={() => setIsOpen(false)}
+          key="box"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.5 }}
+          className="w-[100px] h-[100px] bg-cyan-600"
         />
       )}
     </div>
   );
-}
+};
 
 export default Practice;

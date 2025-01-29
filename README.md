@@ -761,3 +761,48 @@ AnimatePresence makes exit animation easy. By wrapping one or more motion compon
 
 AnimatePresence works by detecting when its direct children are removed from the react tree.
 _Direct Children must have a unique key prop so AnimationPresence can track their presence in the tree._
+
+**Changing Key**: Changing a key prop make React create an entirely new component. So by changing the key of a single child for AnimatePresence.
+
+**Animate Presence State**
+Any child of AnimatePresence can access presence state with the useIsPresent Hook.
+
+**Manual usage**
+It's also possible to manually tell animatePresence when a component is safe to remove with the usePresence hook.
+
+```js
+import { usePresence } from "motion/react";
+
+function Component() {
+  const [isPresent, safeToRemove] = usePresence();
+
+  useEffect(() => {
+    !isPresent && setTimeout(safeToRemove, 1000);
+  }, [isPresent]);
+  return <div />;
+}
+```
+
+This return both isPresent state and a callback, safeToRemove, that should be called when you're ready to remove the component from the DOM
+
+**Propagate exit Animation**
+
+By default AnimatePresence controls the exit animation on all of its children, until another AnimatePresence component is rendererd.
+
+```ts
+interface AnimatePresence {
+  initial;
+  custom;
+  mode: "sync" | "wait" | "poplayout"; // controls the timing of enter and exit animaiton.
+  onExitComplete; // Fires when exit animations are finished
+  propagate; // It set to true, exit animations on children will also trigger when this AnimatePresence exit from a parent AnimatePresence.
+  presenceAffectLayout; //Prevents layout changes
+}
+
+interface mode {
+  mode: "sync" | "wait" | "poplayout";
+  // sync Both entering and exiting components animate at the same time.
+  // wait Waits for all exit animations to finish before new components enter.
+  // poplayout Exiting components animate first, the entering components appera immediately
+}
+```
