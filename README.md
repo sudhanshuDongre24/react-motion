@@ -826,3 +826,24 @@ interface LazyMotion {
   strict: true | false; // if true will throw an error if a motion component renders within a lazyMotion component.
 }
 ```
+
+## LayoutGroup
+
+motion component with a layout prop will detect and animate layout changes every time they commit a React re-render on their layoutDependency prop changes.
+
+LayoutGroup is used to group components that might not render together but do affect each other state.
+
+The layoutGroup component in Framer motion is used to synchronize layout animation between multiple motion components. It ensures that elements animate together smoothly even if they are in different part of the component tree.
+
+- Synchronzies layout animation between multiple components
+- Ensures smooth transition when elemeny enter or exit
+- Work well with layoutId for shared element transitions.
+- Useful for tabs, modals, list and page transitions.
+
+```ts
+interface LayoutGroup {
+  LayoutGroup; /// Group multiple elements for  sync animations.
+  layoutId; //  Creates shared element transitions across different components
+  layout; //Enable automatic layout animation for a single component
+}
+```
