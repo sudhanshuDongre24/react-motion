@@ -847,3 +847,27 @@ interface LayoutGroup {
   layout; //Enable automatic layout animation for a single component
 }
 ```
+
+## MotionConfig
+
+The MotionConfig component can be used to set configuration options for all child motion components.
+
+Used for global configuration setting for the animations in your
+app.
+
+- Set global defaults for animations, saving you from repeating transition setting in every motion element.
+- Allow easy turing of default spring settings, such as damping and stiffness.
+- Improve consistency across animations by defining global behaviors.
+
+```ts
+interface MotionConfig {
+  transition; // Defines a fallback transition to use for all child motion components.
+  reduceMotion: "never" | "user" | "always";
+  // user: Respect the user's device setting.
+  //always: Enforce reduced motion.
+  // never(default): Don't respect reduced motion.
+  nonce;
+}
+```
+
+_Add a blank transition prop in child component will _
