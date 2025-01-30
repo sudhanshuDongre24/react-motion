@@ -806,3 +806,23 @@ interface mode {
   // poplayout Exiting components animate first, the entering components appera immediately
 }
 ```
+
+## LazyMotion
+
+The LazyMotion component in Framer motion is used to dynamically load the motion engine improving performance by loading necessary animation features.
+
+- LazyMotion help optimize performance by loading only required features.
+- Useful in large applications where you want to keep the bundle size small
+- Helps in code-splitting and reducing initial loading time.
+
+```ts
+import { domAnimation, domMax } from "motion/react";
+
+interface LazyMotion {
+  features: domAnimation | domMax | ("syncLoading" | "asyncLoading"); // Define a feature bundle to load sync or async
+  // synchronous loading is useful for defining a subset of functionality for smaller bundlesize.
+  // asynchronous loading can ensure your site is hydrated before loading in some or all function functionality.
+
+  strict: true | false; // if true will throw an error if a motion component renders within a lazyMotion component.
+}
+```
