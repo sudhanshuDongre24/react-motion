@@ -1,27 +1,24 @@
-import React, { useState } from "react";
-import { motion, Reorder } from "motion/react";
-
-const items = ["Apple", "Banana", "Cherry", "Date"];
+import { useMotionValue, motion } from "motion/react";
+import React, { useEffect } from "react";
 
 const Practice = () => {
-  const [list, setList] = useState(items);
+  const y = useMotionValue(0);
+
+  useEffect(() => {
+    const unsubscribe = y.on("change", (latest) => {
+      console.log("y position: ", latest);
+    });
+
+    return () => unsubscribe();
+  }, [y]);
+
   return (
-    <Reorder.Group
-      axis="y"
-      values={list}
-      onReorder={setList}
-      className="space-y-2 p-4"
+    <motion.div
+      drag="y"
+      style={{ y, width: 100, height: 100, background: "blue" }}
     >
-      {list.map((item) => (
-        <Reorder.Item
-          key={item}
-          value={item}
-          className="p-e bg-blue-500 text-white rounded-md cursor-pointer"
-        >
-          {item}
-        </Reorder.Item>
-      ))}
-    </Reorder.Group>
+      Practice
+    </motion.div>
   );
 };
 

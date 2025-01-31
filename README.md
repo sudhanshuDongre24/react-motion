@@ -1,5 +1,7 @@
 # Framer Motion
 
+<!--
+
 ## Transitions
 
 A transition defines the type of animation used when animating between two values.
@@ -328,6 +330,9 @@ The MotionConfig component can be used to set configuration options for all chil
 - Transition: Define a fallback transition to use for all child motion components.
 - reduceMotion:
 
+<p>**********************************************************</p>
+ -->
+
 # Transition Animation
 
 A Transition defines how a animation moves between its start and end value. It controls the timing, easeing and interpolation of the animation, giving you fine-grained control over the behavior.
@@ -448,7 +453,7 @@ type Orchestration = {
 
 - at: It gives you way to orchestrate the animation between to diferent element.
 
-# Gesture Animation
+## Gesture Animation
 
 ```ts
 interface gesture {
@@ -493,7 +498,7 @@ _useCase_
 3. Swipeable Cards: Use pan gestures to swipe cards left or right
 4. Drag and Drop: Enable drag-and-drop UI for task like rearrnging items.
 
-# Scroll Animation
+## Scroll Animation
 
 Scroll animation are used to create dynamice engaging user experiences by animating element based on the user's scorll position.
 
@@ -539,7 +544,7 @@ It return four motion values, two that store offset in pixel(scrollX/Y) and two 
 _Value smoothing_: This value can be smoothed by passing it through useSpring.
 _Transform other values_: With the useTransform hook, it's easy to use the progress motion values to mix between any value, like colors.
 
-# Layout Animation
+## Layout Animation
 
 ```ts
 interface Layout {
@@ -908,3 +913,100 @@ interface Reorder.Item{
 
 }
 ```
+
+# Motion Value
+
+## OverView
+
+A Motion values is special kind of state in framer motion that allows for high-performance animation and reactive motion effect. It is used to track, update and synchronize animations efficiently, without triggering unnecessary React re-render.
+
+They are composable, signal-like values that performant because Motion can render them with its optimised DOM renderer.
+
+By manually creating motion values you can
+
+- Set and get their state.
+- Pass to multiple components to synchrnoise motion across them chain MotionValues via the useTransform hook
+- Update visual Properties without triggering React' render cycle
+- Subscribe to update.
+
+_Changes to motion value will update the DOM without triggering a React re-render ._
+
+_Motion Values can be updated with the set method ._
+_You can React it with the get method ._
+
+```js
+interface motionValue {
+  get: () => number; // Returns the current value
+  set(value): (number) => void; // Updates the motion value
+  onChange(callback): (callback: (value) => void) => void; //  Executes a function when the value changes.
+  velocity: number; // Tracks the speed of the value change
+  isAnimating: () => boolean; // Check if a motion value is currently animating stop any active animation
+  stop(): () => void; // stop any active animation
+  setWithVelocity(perv, current, deltaTime): (prev, current, deltaTime) => void; // Sets the value while keeping velocity
+}
+
+interface useMotionValue(){
+  useMotionValue(value): number;
+}
+
+interfaced useTransform(){
+  useTransform(value, inputRange, outputRange): (motionValue, array,array) // Maps one motion value to another
+  clamp: boolean // Ensure the value stays within  the range.
+}
+
+interface useSpring(){
+  stiffness: number // Controls the tension of the spring
+  damping: number // Controls how much the motion slow down
+  mass: number // Determines the weight of the object being animated.
+}
+
+interface useVelocity(){
+  useVelocity(value): (motionValue) => motionValue // Tracks jhow fast a motion value is changing
+}
+
+interface useScroll(){
+  useScroll: () => {scrollY, scrollX} // Track scroll Position.
+}
+
+```
+
+**API**
+
+- get(): Returns the latest state of the motion value.
+- getVelocity(): Returns the latest velocity of the motion value. Return 0 if the value is non-numerical.
+- set(): Sets the motion value to a new state.
+- jump(): Jumps the motion value to a new state in a way that breaks continuity from the previous values.
+  - Reset velocity to 0
+  - Ends active animations
+  - Ignores attached effect.
+- isAnimating(): Returns true if the value is currently animating
+- stop(): Stop the active animation.
+- on(): Subscribe the motion value events. Available events are
+  - change
+  - animationStart
+  - animationCancel
+  - animationComplete
+- destory(): Destory and clean up subscribers to this motion value
+
+## useMotionValueEvent
+
+useMotionValueEvent manages a motion value event handler throughout the lifecycle of a React component.
+
+Allows you to listen for changes in a motion value(motionValue) and execute a callback when the value update.
+
+When the component is unmouted, event handler will be safely cleaned up.
+
+_Available event_
+
+- change
+- animationStart
+- animationComplete
+- animationCancel
+
+_"change" event are provided the latest value of the motion value._
+
+_useMotionValueEvent is a helper function for a motion value's on method, With on, you can start listening to events whenever you like, for instance within an event handler. But remember to also unsubsrible when the component unmounts._
+
+**on() Method**
+
+The .on() method allows you to listen for updates a motion value and trigger a callback whenever it changes. This is similar to useMotionValueEvent, but it provides more flexibility and work outside React hook.
