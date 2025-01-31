@@ -871,3 +871,40 @@ interface MotionConfig {
 ```
 
 _Add a blank transition prop in child component will _
+
+## Reorder
+
+The Reoder components can be used to create drag-to-reorder like reorderable tabs or todo list
+
+Used to implement drag-drop sorting of list with smooth animation. It simplifies reordering list without requiring external state management and ensure smooth layout transitions using layout animation system
+
+- Reorder.Group wraps the list of items that should be reorderable.
+- Reorder.Item wraps each individual item inside the list.
+- The drag interactio automatically updates the order when the user moves items around.
+- It support both horizontal(axis="x") and vertical(axis="y") sorting.
+
+```js
+
+interface  Reorder.Group {
+  value: T[]; // The Array of items that can be reordered.Required.
+  onReorder:(newOrder: T[]) => void // Callback function that updates the order of items when reordering occuring
+  axis :"x" // "y"
+  as:string //  Component
+  layoutScroll:boolean // It true will maintain position inside a scrolling container
+  children:ReactNode // Accepts multiple Reorder.item components
+}
+
+interface Reorder.Item{
+  value: T // Unique identifier of the item. Required
+  id: string; // Option HTML id for debugging purpose.
+  drag: boolean // "x"
+  dragConstraints:{top, right, bottom, left}; // Restricts dragging within defined boundaries
+  dragElastic: number; // {top, left, right, bottom}
+  dragTransition: {bouncingStiffness, bounceDamping}; // Controls the bounciness of the drag animation.
+  dragSnapToOrigin: boolean; // It true, item spans back to original position when released.
+  whileDrag: AnimationControls; // Defines animaiton while dragging
+  transition:string;
+  layoutId:string; // Ensure smooth animations when items change dynamically.
+
+}
+```
