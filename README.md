@@ -1056,3 +1056,21 @@ const { scrollY, scrollYProgress } = useScroll(options);
 `start end`: Animation Starts when the top of the element hits the bottom of the viewport.
 `end start`: Animation end when the bottom of the element hits the top of the viewport.
 `end end`: Animation end when the bottom of the element hits the bottom of the viewport.
+
+## useSpring
+
+`useSpring` creates a motion value that will animate to its latest target with a spring animation
+
+```js
+import { useSpring } from "motion/react";
+
+const springValue = useSpring(initialValue, config);
+
+interface useSpring {
+  stiffness: number; // Controls how the stiff the spring is (higher values = faster, more rigit motion)
+  damping: number; // Controls how much the spring resists bouncing (lower values = more bouncy)
+  mass: number; // The mass of the spring (affects the momentum).
+  restSpeed: number; // Speed at which the spring should be considered "at rest"
+  restDelta: number; // Threshold of displacement at which the spring should be considered "at rest"
+}
+```
