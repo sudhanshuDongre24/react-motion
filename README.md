@@ -1010,3 +1010,49 @@ _useMotionValueEvent is a helper function for a motion value's on method, With o
 **on() Method**
 
 The .on() method allows you to listen for updates a motion value and trigger a callback whenever it changes. This is similar to useMotionValueEvent, but it provides more flexibility and work outside React hook.
+
+## useMotionTemplete
+
+useMotionTemplete creates a new motion value form a string template containing other motion values.
+Whenever a motion value within the string template updates, the returned motion value will update with the latest value.
+
+useMotionTemplate is hook that combines multiple motion value into a single css-compatible string.
+
+```js
+const x = useMotionValue(100);
+const transform = useMotionTemplate`transform(${x}px)`;
+```
+
+**Drag intersection**
+
+`event`
+
+- The native event object
+- Contains standard event properties like e.clientX, e.clientY
+
+`info`
+
+- info.point: The current position of the pointer (x, y) relative to the viewpoint
+- info.delta: The change in position since the last event(dx, dy)
+- info.offset: The cumulative distance the element has moved from its initial position
+
+## useScroll
+
+`useScroll` is used to create scroll-linked animations, like progress indicators and parallax effects.
+
+`useScroll` returns motion value
+
+- `scrollX/Y`: The absolute scroll position, in pixel,
+- `scrollXProgress/YProgress`: The scorll position between the defined offsets, as a value between 0 and 1.
+- `options`: You can specify a targt element and offset settings for finer control
+
+```js
+const { scrollY, scrollYProgress } = useScroll(options);
+```
+
+`offset` options
+
+`start start`: Animation Starts when the top of the element hits the top of the viewport.
+`start end`: Animation Starts when the top of the element hits the bottom of the viewport.
+`end start`: Animation end when the bottom of the element hits the top of the viewport.
+`end end`: Animation end when the bottom of the element hits the bottom of the viewport.
