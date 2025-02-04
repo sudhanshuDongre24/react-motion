@@ -1093,3 +1093,56 @@ const rotate = useTransform(time, [0, 4000], [0, 360], { clamp: false });
 
 return <motion.div style={{rotate}}>
 ```
+
+## useTransform
+
+`useTransform` create a new motion value thata transforms the output of one or more motion value.
+
+```js
+import { useTransform, useMotionValue } from "motion/react";
+
+const motionValue = useMotionValue(0);
+const transformedValue = useTransform(
+  motionValue,
+  [inputRangeStart, inputRangeEnd],
+  [outputRangeStart, outputRangeEnd]
+);
+```
+
+- Linear Mapping: Maps value from one range to another (eg scaling or color transitions).
+
+- Non-LinarMapping: You can provide a function for more complex transformations.
+
+- Chaining Transforms: You can chain multiple transformations for more intricate animations.
+
+```js
+// Transform function
+
+useTransform(() => x.get() * 2);
+
+// Value mapping
+
+useTransform(x, [0, 100], ["#f00", "#00f"]);
+```
+
+**Transform function**
+
+A transform function is a normal function that returns a value
+
+Any motion values read in this function via the get() method will be automatically subscribed to.
+
+When these motion values change, the function will be run again on the next animation frame to calculate a new value.
+
+**Value mapping**
+
+`useTransform` can also map a single motion value from one range of values to another.
+
+```js
+
+interface useTransfrom{
+  clamp; // If true, will clamp output to witing the provided range. If false will carry on mapping even when the input falls outside the provided range.
+  ease; // An easing function or array of easing function to ease the mixing between each value.
+  mixer; // A function to use  a mix between each pair of output values
+}
+
+```
