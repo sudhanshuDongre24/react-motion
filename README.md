@@ -1074,3 +1074,22 @@ interface useSpring {
   restDelta: number; // Threshold of displacement at which the spring should be considered "at rest"
 }
 ```
+
+## useTime
+
+`useTime` return a motion value that updates once per frame with the duration, in ms since it was first created.
+
+The `useTime` hook is a powerful utility thar provides continuously updating MotionValue representing the current time in millisecond. Used for creating time based animation, effects and transition that evolve smoothly over time
+
+- Animation Based on Time: You can create animations that progress over time without user input like pulsing effects or smooth rotations
+
+- Linking with useTransform: Transform the time value into other properties (like position, scale or rotation) for dynamic animations.
+
+- Continuous Loops: Create continuous, non-repeating animations like clock effects, waves, or infinite scrolling background.
+
+```js
+const time = useTime();
+const rotate = useTransform(time, [0, 4000], [0, 360], { clamp: false });
+
+return <motion.div style={{rotate}}>
+```
