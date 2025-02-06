@@ -1233,3 +1233,36 @@ interface useAnimationFrame{
 - For High-Performance Animations
 - When you need Continuous update without state Re-renders
 - For Physics-based or fluid motion effect
+
+## useDragControls
+
+The `useDragControls` hook provides manual control over dragging behavior. Unlike the usual drag prop, this allows you to trigger dragging programmatically rather than directly from user interaction.
+
+**Why Use useDragControls**
+
+- Manually start Dragging
+- Enable Dragging from a specific handle
+- More control over drag Events
+
+```js
+const dragControls = useDragControls();
+
+<motion.div drag="x" dragControls={dragControls} />;
+```
+
+```js
+
+interface useDragControls{
+  useDragControls(); // Create a drag Control instance
+  dragControls.start(event); // Start dragging manually
+  dragListener={false}; // Disable default drag behavior
+  dragControls.stop(); //
+}
+
+```
+
+**When to use `useDragControls`**
+
+- When you want to drag only from a specific element (handle)
+- When you need external buttons to trigger dragging.
+- When you want full controls over drag events.
