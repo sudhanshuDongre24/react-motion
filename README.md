@@ -1266,3 +1266,13 @@ interface useDragControls{
 - When you want to drag only from a specific element (handle)
 - When you need external buttons to trigger dragging.
 - When you want full controls over drag events.
+
+touch support
+snap to cursor
+Disable automatic drag
+
+## useInView
+
+`useInView` hook that detects when the provided element is within the viewport.
+
+## useReducedMotion
