@@ -1146,3 +1146,53 @@ interface useTransfrom{
 }
 
 ```
+
+## useVelocity
+
+`useVelocity` accepts a motion value and returns a new one that updates with the provided motion value's velocity.
+
+Tracks the velocity of a motion value over time.
+
+```js
+import { useVelocity, useMotionValue } from "motion/react";
+
+const motionValue = useMotionValue(0);
+const velocity = useVelocity(motionValue);
+```
+
+- Inertia Effects: Add dynamic effects like bouncing or momentum based on how fast something is moved
+
+- Dynamic Scaling: Make element grow/shrink depending on how quickly they are dragged.
+
+- Parallax Scolling: Adjust background or foreground speed relative to scroll speed.
+
+# Hooks
+
+## useAnimate
+
+`useAnimate` provides a way of using the aimate function that is scopped to the elements within your component.
+
+This allow you to use manual animation controls, timelines, selectors scoped to your component and automatic cleanup.
+
+```js
+function Component() {
+  const [scope, animate] = useAnimate();
+  // Scope -> A reference to the element you want to animate
+  // Animate -> A function to trigger animations
+
+  useEffect(() => {
+    animate("li", { opacity: 1 });
+  });
+
+  return <ul ref={scope}>{children}</ul>;
+}
+
+
+interface useAnimate{
+
+  scope; // A ref to the element to animate
+  animate; // (element, animation, option?)Triggers animations on the referenced element.
+  stagger; //(Delay) Adds a stagger effect between multiple elements
+  scope.current; // Accesses the current DOM node of scope
+}
+```
