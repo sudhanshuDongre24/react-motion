@@ -1,27 +1,19 @@
-import { useAnimate, usePresence } from "motion/react";
-import React, { useEffect } from "react";
+import { useAnimationFrame, motion, useMotionValue } from "motion/react";
+import React, { useState } from "react";
 
 const Practice = () => {
-  const [isPresent, safeToRemove] = usePresence();
-  const [scope, animate] = useAnimate();
+  const [fps, setFps] = useState(0);
+  let lastTime = 0;
 
-  useEffect(() => {
-    if (isPresent) {
-      const enterAnimation = async () => {};
-      enterAnimation();
-    } else {
-      const exitAnimation = async () => {};
-      exitAnimation();
-    }
-  }, [isPresent]);
-
+  useAnimationFrame((time) => {
+    const delta = time - lastTime;
+    lastTime = time;
+    setFps(Math.round(1000 / delta));
+  });
   return (
-    <ul ref={scope}>
-      <li />
-      <li />
-      <li />
-      <li />
-    </ul>
+    <div className="fixed top-3 left-4 bg-black text-white px-4 py-2 rounded-md">
+      FPS:{fps}
+    </div>
   );
 };
 

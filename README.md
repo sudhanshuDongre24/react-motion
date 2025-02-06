@@ -1200,3 +1200,36 @@ interface useAnimate{
 - Scroll-triggered animations: Animations can be triggered when the scope scrolls into view by combining `useAnimate` with `useInView`
 
 - Exit Animation: It's possible to compose you own exit animations when a component is removed using `useAnimate` in conjuction with `usePresence`
+
+## useAnimationFrame
+
+useAnimationFrame runs a callback once every animation Frame.
+
+The useAnimationFrame hook allows you to execute animations or updates on each frame using requestAnimationFrame. It is useful for high-performance animations, physics-based motion, or continous update like parallax effect, oscillations, or real time data visualization.
+
+```js
+useAnimationFrame((item) => {
+  ref.current.style.transform = `rotateY(${time}deg)`;
+});
+```
+
+The callback in provided two arguments
+
+- time: the total duration of time since the callback was first called
+- delta: the total duration of time since the last animation frame.
+
+```js
+
+interface useAnimationFrame{
+  time; // The total elasped time (in ms ) since the animation started
+  delta; // The time difference (in ms) between the current and last frame
+  useMotionValue; // Used to update dynamically every frame
+}
+
+```
+
+**When to use useAnimationFrame**
+
+- For High-Performance Animations
+- When you need Continuous update without state Re-renders
+- For Physics-based or fluid motion effect
