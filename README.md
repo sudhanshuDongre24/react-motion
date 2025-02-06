@@ -1196,3 +1196,7 @@ interface useAnimate{
   scope.current; // Accesses the current DOM node of scope
 }
 ```
+
+- Scroll-triggered animations: Animations can be triggered when the scope scrolls into view by combining `useAnimate` with `useInView`
+
+- Exit Animation: It's possible to compose you own exit animations when a component is removed using `useAnimate` in conjuction with `usePresence`
