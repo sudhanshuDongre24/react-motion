@@ -68,6 +68,7 @@ import HoverDevCard from "./examples/HoverDevCard.js";
 import MotionButton from "./examples/MotionButton.js";
 import FoldableMap from "./examples/FoldableMap/FoldableMap.js";
 import SideMenu from "./examples/SideMenu/SideMenu.js";
+import SvgPathLength from "./examples/SvgPathLength.js";
 
 const App = () => {
   return (
@@ -140,8 +141,9 @@ const App = () => {
       {/* <MotionButton /> */}
       {/* <FoldableMap /> */}
       {/* <SideMenu /> */}
+      <SvgPathLength />
 
-      <Practice />
+      {/* <Practice /> */}
     </div>
   );
 };
