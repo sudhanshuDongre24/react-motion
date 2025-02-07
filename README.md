@@ -1299,3 +1299,20 @@ interface Props{
 ```
 
 ## useReducedMotion
+
+The useReduceMotion hook detects if a user has enabled the "Reduce Motion" setting in their OS. This helps create accessible animations by reducing or disabling motion effect when necessary
+
+```Js
+
+const shouldReduceMotion = useReduceMotion()
+
+// Return true if the user has enabled reduced motion
+// Return false if animation should play normally
+
+```
+
+**When to use `useReduceMotion`**
+
+- Accessiblity Best Practice: Ensure animations are comfortable for motion-sensitive users.
+- Reduce Unnecessary Motion: Helps avoid excessive movement in UI component
+- Performance Optimization: Can Simplify animations for better performace
