@@ -141,9 +141,9 @@ const App = () => {
       {/* <MotionButton /> */}
       {/* <FoldableMap /> */}
       {/* <SideMenu /> */}
-      <SvgPathLength />
+      {/* <SvgPathLength /> */}
 
-      {/* <Practice /> */}
+      <Practice />
     </div>
   );
 };

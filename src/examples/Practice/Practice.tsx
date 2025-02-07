@@ -1,39 +1,28 @@
-import { motion, useDragControls } from "motion/react";
-import React, { useState } from "react";
+import { useInView, motion } from "motion/react";
+import React, { useRef } from "react";
 
 const Practice = () => {
-  const dragControls = useDragControls();
-  const [isDragging, setIsDragging] = useState(false);
-
-  console.log(isDragging);
+  const containerRef = useRef(null);
+  const itemRef = useRef(null);
+  const isInView = useInView(itemRef, { root: containerRef, amount: 0.5 });
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <motion.div
-        drag="x"
-        dragControls={dragControls}
-        dragListener={false}
-        className="w-40 h-40 bg-purple-500 flex items-center justify-center"
+    <div className="h-screen flex justify-center items-center">
+      <div
+        ref={containerRef}
+        className="w-80 h-60 overflow-y-scroll border-2 border-gray-400 p-4"
       >
-        {isDragging ? "Dragging" : "Drag Me"}
-      </motion.div>
-
-      <div className="mt-4 flex gap-4">
-        <button
-          onPointerDown={(e) => {
-            dragControls.start(e);
-            setIsDragging(true);
-          }}
-          className="px-5 py-2 bg-black text-white rounded-md"
+        <div className="h-40 bg-gray-200 mb-4">Item 1</div>
+        <motion.div
+          ref={itemRef}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.5 }}
+          className="h-40 bg-green-500 text-white flex items-center justify-center"
         >
-          Start Dragging
-        </button>
-        <button
-          onClick={() => setIsDragging(false)}
-          className="px-4 py-2 bg-red-500 text-white rounded-md"
-        >
-          Stop Dragging
-        </button>
+          {isInView ? "I'm visible! 🎉" : "Scroll down"}
+        </motion.div>
+        <div className="h-40 bg-gray-200 mt-4">Item 3</div>
       </div>
     </div>
   );

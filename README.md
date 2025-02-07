@@ -1275,4 +1275,27 @@ Disable automatic drag
 
 `useInView` hook that detects when the provided element is within the viewport.
 
+The `useInView` hook detects when an element enter or exits the viewport. It is useful for scroll Triggered animation, lazy loading and performance optimizations.
+
+```js
+const ref = useRef(null);
+const isInView = (ref, { options });
+
+interface useInView{
+
+  ref; // connects the target element
+  isInView; // Boolean true/false indicating if the element is in view
+  options:  // Custom settings
+}
+
+interface Props{
+  once; // Runs the animation only once(true) or every time it enters view (false)
+  margin; // Adjusts the viewport margins
+  amount; // Specifies how much of the element must be visible(0  -1)
+  root; // Sets a custom scroll container (default: viewport)
+  rootMarign; //Similar to margin, but for IntersectionObserver.
+}
+
+```
+
 ## useReducedMotion
