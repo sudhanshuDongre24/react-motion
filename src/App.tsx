@@ -69,6 +69,8 @@ import MotionButton from "./examples/MotionButton.js";
 import FoldableMap from "./examples/FoldableMap/FoldableMap.js";
 import SideMenu from "./examples/SideMenu/SideMenu.js";
 import SvgPathLength from "./examples/SvgPathLength.js";
+import "./index.css";
+import ReactLogo from "./examples/ReactLogo.js";
 
 const App = () => {
   return (

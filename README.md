@@ -1170,7 +1170,7 @@ const velocity = useVelocity(motionValue);
 
 ## useAnimate
 
-`useAnimate` provides a way of using the aimate function that is scopped to the elements within your component.
+`useAnimate` provides a way of using the animate function that is scopped to the elements within your component.
 
 This allow you to use manual animation controls, timelines, selectors scoped to your component and automatic cleanup.
 
@@ -1208,9 +1208,12 @@ useAnimationFrame runs a callback once every animation Frame.
 The useAnimationFrame hook allows you to execute animations or updates on each frame using requestAnimationFrame. It is useful for high-performance animations, physics-based motion, or continous update like parallax effect, oscillations, or real time data visualization.
 
 ```js
-useAnimationFrame((item) => {
+useAnimationFrame((time, delta) => {
   ref.current.style.transform = `rotateY(${time}deg)`;
 });
+
+//  time - The total duration of time since the callback was first called
+//  delta - The total duration of time since the last animation frame.
 ```
 
 The callback in provided two arguments
