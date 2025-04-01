@@ -130,7 +130,7 @@ const App = () => {
       {/* <BasicFAQ /> */}
       {/* <LayoutAnimationTwo /> */}
       {/* <LayoutSwapping /> */}
-      {/* <TextParallexScroll /> */}
+      <TextParallexScroll />
       {/* <SmoothScrollHero /> */}
       {/* <ShuffleHero /> */}
       {/* <VerticalAccordians /> */}
@@ -145,7 +145,7 @@ const App = () => {
       {/* <SideMenu /> */}
       {/* <SvgPathLength /> */}
 
-      <Practice />
+      {/* <Practice /> */}
     </div>
   );
 };
